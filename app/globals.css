@@ -12,11 +12,18 @@
   --color-brand-cream:  #FFF9DC;
 
   /* ─── Tonal scale (derived) ─── */
-  --color-gold-light:    #E8C36A;
-  --color-gold-deep:     #8B6914;
-  --color-cream-warm:    #FAF7F0;
-  --color-charcoal:      #0A0A0A;
-  --color-charcoal-soft: #1A1610;
+  --color-gold-light:      #E8C36A;
+  --color-gold-deep:       #8B6914;
+  --color-off-white:       #FAFAF7;
+  --color-off-white-soft:  #F4F2EC;
+  --color-charcoal:        #0A0A0A;
+  --color-charcoal-soft:   #141414;
+
+  /* ─── Neutral scale ─── */
+  --color-neutral-200: #E8E6E0;
+  --color-neutral-400: #A8A6A0;
+  --color-neutral-600: #6B6963;
+  --color-neutral-800: #2A2825;
 
   /* ─── Spacing tokens ─── */
   --spacing-1:  4px;
@@ -32,13 +39,13 @@
   --spacing-40: 160px;
 
   /* ─── Layout ─── */
-  --container-max:      1440px;
+  --container-max:      1280px;
   --container-narrow:   960px;
   --container-text:     640px;
   --gutter-mobile:      20px;
-  --gutter-desktop:     56px;
-  --section-gap:        160px;
-  --section-gap-mobile: 80px;
+  --gutter-desktop:     48px;
+  --section-gap:        192px;
+  --section-gap-mobile: 96px;
 
   /* ─── Motion ─── */
   --duration-fast:   200ms;
@@ -47,6 +54,7 @@
   --duration-cinema: 1200ms;
   --ease-out-soft:    cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-snappy:      cubic-bezier(0.16, 1, 0.3, 1);
 
   /* ─── Shape ─── */
   --radius: 0;
@@ -55,16 +63,16 @@
 @layer base {
   /* ─── Semantic tokens — light mode (default) ─── */
   :root {
-    --surface-primary:   #FAF7F0;
-    --surface-secondary: #ffffff;
-    --surface-elevated:  #FFF9DC;
+    --surface-primary:   #FAFAF7;
+    --surface-secondary: #F4F2EC;
+    --surface-elevated:  #ffffff;
 
     --text-primary:   #0A0A0A;
     --text-secondary: rgba(10, 10, 10, 0.65);
     --text-muted:     rgba(10, 10, 10, 0.45);
     --text-on-dark:   #FFF9DC;
 
-    --border-subtle:   rgba(199, 153, 28, 0.18);
+    --border-subtle:   #E8E6E0;
     --border-emphasis: rgba(199, 153, 28, 0.4);
 
     --accent:      #C7991C;
@@ -100,10 +108,6 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
   }
 }
 
