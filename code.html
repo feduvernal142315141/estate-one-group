@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(251, 251, 226, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(181, 38, 25, 0.15);
+        }
+        .heritage-line {
+            width: 100px;
+            height: 1px;
+            background-color: #a08000;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#858383",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-tertiary-container": "#a08000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f2d9",
+                    "surface-container": "#efefd7",
+                    "background": "#fbfbe2",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-secondary-fixed-variant": "#920703",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdad4",
+                    "surface-container-highest": "#e4e4cc",
+                    "secondary-container": "#ff5c47",
+                    "on-secondary-container": "#610000",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "surface": "#fbfbe2",
+                    "secondary": "#b52619",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#474646",
+                    "tertiary-fixed": "#ffe088",
+                    "on-background": "#1b1d0e",
+                    "outline": "#747878",
+                    "on-secondary-fixed": "#410000",
+                    "surface-container-low": "#f5f5dc",
+                    "surface-container-high": "#eaead1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-bright": "#fbfbe2",
+                    "on-surface": "#1b1d0e",
+                    "error-container": "#ffdad6",
+                    "primary": "#000000",
+                    "surface-tint": "#5f5e5e",
+                    "on-surface-variant": "#444748",
+                    "primary-container": "#1c1b1b",
+                    "inverse-primary": "#c9c6c5",
+                    "inverse-surface": "#303221",
+                    "tertiary-container": "#241a00",
+                    "surface-variant": "#e4e4cc",
+                    "surface-dim": "#dbdcc3",
+                    "outline-variant": "#c4c7c7",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "error": "#ba1a1a",
+                    "tertiary": "#000000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "section-gap": "160px"
+            },
+            "fontFamily": {
+                    "h3-caps": ["Inter"],
+                    "h1-editorial": ["Noto Serif"],
+                    "display-hero": ["Noto Serif"],
+                    "h2-section": ["Noto Serif"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-gold": ["Inter"]
+            },
+            "fontSize": {
+                    "h3-caps": ["14px", {"lineHeight": "1.5", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "h1-editorial": ["48px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-hero": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "h2-section": ["32px", {"lineHeight": "1.3", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-gold": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-[100] flex justify-between items-center px-12 py-6 bg-stone-950/85 backdrop-blur-xl border-b border-yellow-600/15 shadow-2xl">
+<div class="text-2xl font-light tracking-[0.2em] text-stone-100 font-noto-serif uppercase">ESTATE HERITAGE</div>
+<nav class="hidden md:flex gap-10">
+<a class="font-noto-serif text-sm tracking-widest uppercase text-yellow-600 border-b border-yellow-600 pb-1" href="#">Inicio</a>
+<a class="font-noto-serif text-sm tracking-widest uppercase text-stone-400 hover:text-stone-100 transition-colors" href="#">Propiedades</a>
+<a class="font-noto-serif text-sm tracking-widest uppercase text-stone-400 hover:text-stone-100 transition-colors" href="#">Zonas</a>
+<a class="font-noto-serif text-sm tracking-widest uppercase text-stone-400 hover:text-stone-100 transition-colors" href="#">Nosotros</a>
+<a class="font-noto-serif text-sm tracking-widest uppercase text-stone-400 hover:text-stone-100 transition-colors" href="#">Servicios</a>
+<a class="font-noto-serif text-sm tracking-widest uppercase text-stone-400 hover:text-stone-100 transition-colors" href="#">Blog</a>
+</nav>
+<button class="bg-secondary text-white px-8 py-3 font-h3-caps text-xs tracking-widest hover:bg-red-800 transition-all duration-500 active:opacity-80 active:scale-95">
+            Agendar Asesoría
+        </button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A cinematic wide shot of a modern, ultra-luxury villa in Marbella at twilight. The architecture features clean lines, expansive glass walls, and a glowing infinity pool that merges with the Mediterranean horizon. The lighting is soft and golden, reflecting off smooth stone surfaces. The overall mood is quiet, authoritative, and breathtakingly expensive, set against a deep blue evening sky with subtle cream and crimson accents in the lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDYJHthnADPG-MfoyNixZ0aYEWnldgJtRBvpxB6y9bKNJZg4oBu-GO5oTPjsxMVAmuf6lewZV_Pbx1OXlZYfxYGaLB0aX9ZTopKU6bKK3dD9VbGj6jKIKdiBGDYOxAsUMqs0v4T9wsXAt5dAWqA7MBx56Sg5q-hWdQiq19NUH96bnA-WhLbIOL9-0I2gENO6St36XUHkn6v_SR_B9DzgG4hqRYbn-g84AvQl2sH_ca6spe6NcbDrQXDZ_eyptPc0ViDF4KwaB19v0"/>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="relative z-10 px-6 max-w-5xl">
+<h1 class="font-display-hero text-display-hero text-white mb-6">
+                    Encuentra la propiedad que refleja tu próximo nivel
+                </h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-12 max-w-2xl mx-auto">
+                    Curamos los espacios de vida más excepcionales del mundo para aquellos que exigen un legado arquitectónico.
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="bg-secondary text-white px-10 py-5 font-h3-caps text-sm tracking-widest hover:bg-red-950 transition-all duration-500 min-w-[240px]">
+                        EXPLORAR PROPIEDADES
+                    </button>
+<button class="border border-tertiary-fixed text-white px-10 py-5 font-h3-caps text-sm tracking-widest hover:bg-white/10 backdrop-blur-sm transition-all duration-500 min-w-[240px]">
+                        AGENDAR ASESORÍA
+                    </button>
+</div>
+</div>
+<!-- Floating Search Bar -->
+<div class="absolute bottom-20 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6 z-20">
+<div class="glass-card p-2 shadow-2xl flex flex-col md:flex-row items-center gap-2">
+<div class="flex-1 grid grid-cols-3 w-full">
+<div class="px-6 py-4 flex flex-col items-start border-r border-on-tertiary-container/10">
+<span class="font-label-gold text-label-gold text-on-tertiary-container mb-1">UBICACIÓN</span>
+<span class="font-body-md text-primary font-semibold">Costa del Sol, España</span>
+</div>
+<div class="px-6 py-4 flex flex-col items-start border-r border-on-tertiary-container/10">
+<span class="font-label-gold text-label-gold text-on-tertiary-container mb-1">TIPO</span>
+<span class="font-body-md text-primary font-semibold">Mansión Moderna</span>
+</div>
+<div class="px-6 py-4 flex flex-col items-start">
+<span class="font-label-gold text-label-gold text-on-tertiary-container mb-1">RANGO</span>
+<span class="font-body-md text-primary font-semibold">$5M - $25M+</span>
+</div>
+</div>
+<button class="bg-primary text-white p-6 hover:bg-stone-800 transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Trust Stats -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-12 grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+<div class="flex flex-col items-center">
+<span class="font-display-hero text-5xl text-on-tertiary-container mb-2">500+</span>
+<span class="font-h3-caps text-on-primary-container">PROPIEDADES VENDIDAS</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-display-hero text-5xl text-on-tertiary-container mb-2">$1.2B</span>
+<span class="font-h3-caps text-on-primary-container">VOLUMEN DE VENTAS</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-display-hero text-5xl text-on-tertiary-container mb-2">25+</span>
+<span class="font-h3-caps text-on-primary-container">AÑOS DE CONFIANZA</span>
+</div>
+</div>
+</section>
+<!-- Featured Residences Section -->
+<section class="py-section-gap max-w-[1440px] mx-auto px-12">
+<div class="flex flex-col items-center mb-24 text-center">
+<div class="heritage-line mb-8"></div>
+<h2 class="font-h1-editorial text-h1-editorial mb-4">Residencias Destacadas</h2>
+<p class="font-body-lg text-on-primary-container max-w-xl">Una selección exclusiva de las obras maestras arquitectónicas más codiciadas de nuestra red global.</p>
+</div>
+<div class="grid grid-cols-12 gap-10">
+<!-- Large Card -->
+<div class="col-span-12 md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden h-[600px] mb-6">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="An expansive architectural masterpiece villa with massive cantilevered concrete structures and floor-to-ceiling glass. The house is situated on a rugged cliff overlooking a turquoise ocean during the golden hour. The visual style is minimal and heroic, with sharp shadows and a clean, high-contrast aesthetic that emphasizes the raw materials of stone, glass, and wood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARvSCO0YZ1BSP3i39tE3e1xWzgbh8Rp9c4uiKGKReJvHix9ZbG1clBwUPbu81ebbvCPbTmJi8_U5-sN3qoych3BFHAzm2P9q4QSrJw0LjyGzOnyM1QwkuxafOmcU-yLDuWRhWPowsxNUqsCdbbhatp933sWcRysYf6c-BPG2kWRz4EafNXMdeKlLrH4ipJnxrk4hafHI1aaswYhLuCtg9hamYNoFnayDVCaJTKLGjhPgI523oJfPo2jOT-TwKUl1pbMCBKWFPBT6Y"/>
+<div class="absolute top-6 left-6 bg-secondary text-white px-4 py-1 font-h3-caps text-[10px]">EXCLUSIVE</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-h2-section text-h2-section mb-2">The Obsidian Monolith</h3>
+<p class="font-body-md text-on-primary-container">Beverly Hills, California</p>
+</div>
+<p class="font-h1-editorial text-3xl text-on-tertiary-container">$18,500,000</p>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="col-span-12 md:col-span-4 group cursor-pointer mt-12">
+<div class="relative overflow-hidden h-[400px] mb-6">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Interior view of a high-end luxury living room featuring bespoke Italian furniture and a sculptural marble fireplace. Large windows reveal a lush Mediterranean garden. The room is flooded with soft natural daylight, highlighting the creamy textures of the upholstery and the subtle gold accents of the lighting fixtures. The atmosphere is one of serene, understated wealth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlqvxRmV39GOzgwBP_A9ELRWFSEJZdIHkpAKcajH9Tk8Os7yPOdk0l2N21DJ735Qisun3X2MpAxxjQxwUNEiNOKZ_hl87RK2hwImRCe_rMTiz3KeYiZzJJDWREACiciLNYDrlqIllE-dkS3uY-ufeM0cLlhzsTDRnom-wVzfMCrv29dveZliS7U5Lc45Sb5HB8qNpZxx9wjogk3x6JYUq4-AvQrUeHxCUx_xIHL_K9kf1RBmGQHgJ8z282Rp8P0uOYB6Zcm8nC-_0"/>
+<div class="absolute top-6 left-6 bg-secondary text-white px-4 py-1 font-h3-caps text-[10px]">EXCLUSIVE</div>
+</div>
+<h3 class="font-h2-section text-2xl mb-2">Villa Luminosa</h3>
+<p class="font-body-md text-on-primary-container mb-4">Cap d'Antibes, France</p>
+<p class="font-h1-editorial text-2xl text-on-tertiary-container">$12,000,000</p>
+</div>
+<!-- Small Card 2 -->
+<div class="col-span-12 md:col-span-4 group cursor-pointer -mt-12">
+<div class="relative overflow-hidden h-[400px] mb-6">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A minimalist architectural detail of a staircase made of solid white oak and floating glass panels. The scene is illuminated by a thin ray of sunlight creating a dramatic line across the polished concrete floor. This image represents the pinnacle of modern design and heritage craftsmanship, with a clean and sophisticated light-mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJM6jOqHMC2gxKD5CgqLGpLy-XTqWcCySQLwa1iNZNIzZrrIVLBt6gu652If7HoVMhsCDk-oMwUC_8PukNSuXnjfe2BDbtnzz3aMjorsQNdr4wufm9-InjAevdnzUOulLMXyXYYH-PnYcbgMXOQ_HW1ZZIEMMJo_wxk8i-j4CSwGwSi9bPh1No9ecbFiTcCB5j9FNHG1LZxdZY0kHMog5WrlV03Q4HU8SLnjsXT_tmE3gn6oxCcv6vtIjXfvAelnq5iTBtC8FdYks"/>
+<div class="absolute top-6 left-6 bg-secondary text-white px-4 py-1 font-h3-caps text-[10px]">EXCLUSIVE</div>
+</div>
+<h3 class="font-h2-section text-2xl mb-2">Penthouse Echo</h3>
+<p class="font-body-md text-on-primary-container mb-4">Dubai Islands, UAE</p>
+<p class="font-h1-editorial text-2xl text-on-tertiary-container">$9,750,000</p>
+</div>
+<!-- Medium Card -->
+<div class="col-span-12 md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden h-[500px] mb-6">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Aerial view of a sprawling waterfront estate with multiple symmetrical wings and lush private gardens. The swimming pool is a deep sapphire blue, contrasting with the light cream stone of the terraces. The scene is captured in high-key midday sun, creating a vibrant, luxurious, and energetic mood that celebrates grand Mediterranean living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNjm-t7e6Yq5o0V9-gw17imi0Hmf413TUJcMrixuqMOeIddxSW-WkmnU_VBVGGBibiiErTovwzku6mfhtxy_uxiPnxyP2G6fKbcEV3gnBu0Q76hs3AHFMUrR4X-IlFIPy2jvLvXQUZjKMyTIVFuPYQTdiOfd--_tcNOdrHG2Sng9ot07UcsxweMo9p5vh_TbflvImFpbnNLBmDoVJ6QO5KhDaPkCup_BePdP1v9IIn6qlRDST1eVSLTdeNVM9LIgRfXSUimDxjgeo"/>
+<div class="absolute top-6 left-6 bg-secondary text-white px-4 py-1 font-h3-caps text-[10px]">EXCLUSIVE</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-h2-section text-h2-section mb-2">The Azure Estate</h3>
+<p class="font-body-md text-on-primary-container">Mykonos, Greece</p>
+</div>
+<p class="font-h1-editorial text-3xl text-on-tertiary-container">$22,000,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Private Concierge Section -->
+<section class="bg-surface-container-high py-section-gap">
+<div class="max-w-[1440px] mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<img class="w-full h-[700px] object-cover" data-alt="A portrait of a professional lifestyle manager in a tailored dark suit, standing in a sun-drenched, high-ceilinged office with minimalist decor. The lighting is soft and cinematic, with warm highlights on the person's silhouette. The background is slightly blurred, focusing on the calm and authoritative presence of the concierge, conveying trust, discretion, and high-end service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1pGITTyVDLb3UC3SgCLTKmx0qSH7aT6zAb9ELt3JxExrGgNeRBGdtfV53HQrsnVoNvGsZIIpOkbnjAS-ovCc1JR4WOx9yehN_GeFgv73275T0jyGsKHfNPAqX7cj-0Pb4RUZ7uKWHKUWNVwNi5ype5YLnYPe9bg_kCzR3EgG-DJro3I549TWd-dqKObsu8MvA401k8Ol8c8bVWbuUEHC8yXAQoIzDL0vK1qYe2FDS6r8PlnkC3pNTX6oEsC7FeRP2oU70eYJ9ftg"/>
+<div class="absolute -bottom-10 -right-10 bg-on-tertiary-container p-12 text-white hidden lg:block">
+<p class="font-h2-section text-3xl italic">"La discreción es el mayor de nuestros lujos."</p>
+</div>
+</div>
+<div>
+<div class="heritage-line mb-8"></div>
+<h2 class="font-h1-editorial text-h1-editorial mb-8">Concierge Privado de Legado</h2>
+<p class="font-body-lg text-on-primary-container mb-12">Más que una transacción, ofrecemos una gestión integral de su patrimonio inmobiliario. Desde la adquisición discreta hasta el mantenimiento de nivel hotelero, somos los guardianes de su confort.</p>
+<div class="space-y-10">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" style="font-variation-settings: 'FILL' 0;">shield_person</span>
+<div>
+<h4 class="font-h3-caps text-primary mb-2">ADQUISICIÓN OFF-MARKET</h4>
+<p class="font-body-md text-on-primary-container">Acceso a propiedades que nunca llegarán al mercado abierto, gestionadas con absoluta reserva.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" style="font-variation-settings: 'FILL' 0;">architecture</span>
+<div>
+<h4 class="font-h3-caps text-primary mb-2">CONSULTORÍA ARQUITECTÓNICA</h4>
+<p class="font-body-md text-on-primary-container">Asesoramiento especializado sobre el potencial de revalorización y legado de cada diseño.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" style="font-variation-settings: 'FILL' 0;">concierge</span>
+<div>
+<h4 class="font-h3-caps text-primary mb-2">GESTIÓN DE ESTILO DE VIDA</h4>
+<p class="font-body-md text-on-primary-container">Servicios post-venta que aseguran que su mudanza y estancia sean impecables y sin esfuerzo.</p>
+</div>
+</div>
+</div>
+<button class="mt-16 border-b-2 border-secondary text-primary font-h3-caps py-2 hover:text-secondary transition-colors">
+                        CONOCER MÁS SOBRE EL SERVICIO
+                    </button>
+</div>
+</div>
+</section>
+<!-- Final CTA / Cinematic Reveal -->
+<section class="relative h-[819px] w-full flex items-center justify-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A wide, sweeping view of a modern beach club and resort at sunset, with clean architectural lines and glowing warm lights. The ocean is calm and the sky is painted in hues of orange, purple, and deep obsidian. This scene captures the ultimate lifestyle aspiration of luxury real estate, presented in a high-contrast, editorial style with a focus on space and serenity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZZXazviUpcUpwE7nFyplYNeDJPzjWXnJbwKGQN6VxD0qBXKG1ZQMdyx9VLt6H0uhTDV5DY-2A9nXLdxx17b8rTjzLu9KU5ZlfnZY8dKEBS_M8nc_nlU2wLoRM4wuGxAN0KkVefrBvMFog683TGVAUx0C6u9uH2fMGm67ZgOkhFjHopYBzLWKGjqRMIdfjoqTD5tEdgjwef9euss3KpD5Lq-kpAEeb-F3uUQVeezPgF15U_lCRHlSedMdbbkAINUUNIHEm3GiGJvo"/>
+<div class="absolute inset-0 bg-black/60"></div>
+<div class="relative z-10 text-center px-6">
+<h2 class="font-h1-editorial text-5xl text-white mb-8">¿Listo para su próxima inversión de legado?</h2>
+<button class="bg-secondary text-white px-12 py-6 font-h3-caps text-sm tracking-widest hover:bg-red-800 transition-all duration-500">
+                    CONTACTAR A UN ESPECIALISTA
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-950 border-t border-yellow-600/10">
+<div class="w-full py-20 px-12 grid grid-cols-1 md:grid-cols-4 gap-16 max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-lg font-bold tracking-widest text-stone-200 font-noto-serif mb-8 uppercase">ESTATE HERITAGE</div>
+<p class="font-noto-serif text-xs tracking-tighter text-stone-500 leading-relaxed">
+                    Definiendo el legado arquitectónico a través de los espacios más exclusivos del mundo. Expertos en corretaje de alto nivel y gestión patrimonial global.
+                </p>
+</div>
+<div>
+<h4 class="text-stone-200 font-h3-caps text-xs mb-8">NAVEGACIÓN</h4>
+<ul class="space-y-4">
+<li><a class="font-noto-serif text-xs tracking-tighter text-stone-500 hover:text-yellow-600 transition-colors" href="#">Propiedades</a></li>
+<li><a class="font-noto-serif text-xs tracking-tighter text-stone-500 hover:text-yellow-600 transition-colors" href="#">Zonas VIP</a></li>
+<li><a class="font-noto-serif text-xs tracking-tighter text-stone-500 hover:text-yellow-600 transition-colors" href="#">Nosotros</a></li>
+<li><a class="font-noto-serif text-xs tracking-tighter text-stone-500 hover:text-yellow-600 transition-colors" href="#">Inversores</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-stone-200 font-h3-caps text-xs mb-8">CONTACTO</h4>
+<ul class="space-y-4">
+<li><p class="font-noto-serif text-xs tracking-tighter text-stone-500">Madrid | Dubai | New York</p></li>
+<li><p class="font-noto-serif text-xs tracking-tighter text-stone-500">+34 900 123 456</p></li>
+<li><p class="font-noto-serif text-xs tracking-tighter text-stone-500">private@estateheritage.com</p></li>
+</ul>
+</div>
+<div>
+<h4 class="text-stone-200 font-h3-caps text-xs mb-8">NEWSLETTER</h4>
+<div class="relative border-b border-stone-800 pb-2">
+<input class="bg-transparent border-none text-xs font-noto-serif text-stone-200 focus:ring-0 w-full placeholder:text-stone-700" placeholder="SU E-MAIL" type="email"/>
+<button class="absolute right-0 top-0 text-yellow-600">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full px-12 py-8 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center max-w-[1440px] mx-auto">
+<p class="font-noto-serif text-xs tracking-tighter text-stone-500">© 2024 ESTATE HERITAGE. ALL RIGHTS RESERVED. ARCHITECTURAL LEGACY DEFINED.</p>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="font-noto-serif text-xs tracking-tighter text-stone-500 hover:text-yellow-600 transition-colors" href="#">Privacy Policy</a>
+<a class="font-noto-serif text-xs tracking-tighter text-stone-500 hover:text-yellow-600 transition-colors" href="#">Terms of Service</a>
+<a class="font-noto-serif text-xs tracking-tighter text-stone-500 hover:text-yellow-600 transition-colors" href="#">Global Network</a>
+</div>
+</div>
+</footer>
+</body></html>

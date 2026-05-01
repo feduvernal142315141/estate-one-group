@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ─── Fonts (variables defined by next/font in layout.tsx) ─── */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans:  var(--font-inter), system-ui, sans-serif;
+
+  /* ─── Brand colors (canonical — from brand manual) ─── */
+  --color-brand-black:  #000000;
+  --color-brand-gold:   #C7991C;
+  --color-brand-red:    #B00000;
+  --color-brand-cream:  #FFF9DC;
+
+  /* ─── Tonal scale (derived) ─── */
+  --color-gold-light:    #E8C36A;
+  --color-gold-deep:     #8B6914;
+  --color-cream-warm:    #FAF7F0;
+  --color-charcoal:      #0A0A0A;
+  --color-charcoal-soft: #1A1610;
+
+  /* ─── Spacing tokens ─── */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+  --spacing-40: 160px;
+
+  /* ─── Layout ─── */
+  --container-max:      1440px;
+  --container-narrow:   960px;
+  --container-text:     640px;
+  --gutter-mobile:      20px;
+  --gutter-desktop:     56px;
+  --section-gap:        160px;
+  --section-gap-mobile: 80px;
+
+  /* ─── Motion ─── */
+  --duration-fast:   200ms;
+  --duration-base:   400ms;
+  --duration-slow:   700ms;
+  --duration-cinema: 1200ms;
+  --ease-out-soft:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ─── Shape ─── */
+  --radius: 0;
+}
+
+@layer base {
+  /* ─── Semantic tokens — light mode (default) ─── */
+  :root {
+    --surface-primary:   #FAF7F0;
+    --surface-secondary: #ffffff;
+    --surface-elevated:  #FFF9DC;
+
+    --text-primary:   #0A0A0A;
+    --text-secondary: rgba(10, 10, 10, 0.65);
+    --text-muted:     rgba(10, 10, 10, 0.45);
+    --text-on-dark:   #FFF9DC;
+
+    --border-subtle:   rgba(199, 153, 28, 0.18);
+    --border-emphasis: rgba(199, 153, 28, 0.4);
+
+    --accent:      #C7991C;
+    --accent-deep: #8B6914;
+    --action:      #B00000;
+
+    --shadow-soft:    0 30px 60px -20px rgba(0, 0, 0, 0.12);
+    --shadow-ambient: 0 20px 60px -10px rgba(0, 0, 0, 0.5);
+    --shadow-hover:   0 40px 80px -30px rgba(0, 0, 0, 0.18);
+  }
+
+  /* ─── Semantic tokens — dark mode (hero, footer) ─── */
+  [data-theme="dark"] {
+    --surface-primary:   #0A0A0A;
+    --surface-secondary: #1A1610;
+    --text-primary:      #FFF9DC;
+    --text-secondary:    rgba(255, 249, 220, 0.65);
+    --border-subtle:     rgba(199, 153, 28, 0.15);
+  }
+
+  * {
+    border-color: var(--border-subtle);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--surface-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s var(--ease-out-soft) forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s var(--ease-out-soft) forwards;
+  }
+}
