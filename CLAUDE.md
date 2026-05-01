@@ -4,7 +4,7 @@
 
 ## Project at a glance
 
-You are building **Estate One Group**, a luxury real estate website. The bar is **9/10 visually**, not 7/10. References are **Sotheby's, Compass Premium, Aman Resorts, Apple** — not Zillow.
+You are building **Estate One Group**, a luxury real estate website. The bar is **9/10 visually**, not 7/10. References are **Linear, Aesop, Compass, Brunello Cucinelli, Apple** — not Zillow.
 
 **The visual identity must feel like a luxury firm, not a template.** This is the most important rule. If something looks "correct but generic," it is wrong.
 
@@ -12,10 +12,10 @@ You are building **Estate One Group**, a luxury real estate website. The bar is 
 
 Always read these in order at the start of any session:
 
-1. `DESIGN.md` — design system tokens and rules
-2. `DESIGN_REVIEW.md` — what is wrong with the current template
-3. `BRAND.md` — brand voice and art direction
-4. `PLAN.md` and `ROADMAP.md` — what to build next
+1. `docs/DESIGN.md` — design system tokens and rules (v2 tech-luxury)
+2. `docs/BRAND.md` — brand voice and art direction (v2 modern direct)
+3. `docs/PLAN.md` and `docs/ROADMAP.md` — what to build next
+4. `docs/CONTENT.md` — bilingual copy reference
 
 ## Model strategy (cost/quality tradeoff)
 
@@ -120,4 +120,4 @@ content/
 
 ## When in doubt
 
-Re-read `DESIGN.md`. If the answer is not there, ask before guessing — luxury and "good enough" are not compatible.
+Re-read `docs/DESIGN.md`. If the answer is not there, ask before guessing — luxury and "good enough" are not compatible.

@@ -117,7 +117,7 @@
 ### Footer component
 | Task | Model | Why |
 |---|---|---|
-| Refactor `<Footer>` per DESIGN_REVIEW correction #10 | 🔴 | Brand frame component |
+| Refactor `<Footer>` per docs/DESIGN.md > Components > Footer | 🔴 | Brand frame component |
 | Build newsletter input (bottom-border + ghost submit) | 🟡 | Per Input spec |
 | Build bottom strip with tracking + locale toggle | 🟡 | Standard |
 | Wire form submit to `/api/lead` | 🟡 | Server Action |
@@ -371,7 +371,7 @@ This balance assumes you escalate to Opus only when needed. If you find yourself
 ```
 @CLAUDE.md @DESIGN.md @ROADMAP.md
 We're starting Sprint 1. Read the goals.
-First task: refactor the Header component per DESIGN_REVIEW correction #1 and #7.
+First task: refactor the Header component per docs/DESIGN.md > Components > Header (v2 spec).
 Use Opus for this — it's a brand-defining component.
 ```
 
@@ -384,8 +384,8 @@ Use Haiku.
 
 ### Pattern 3: Stuck on quality
 ```
-@DESIGN.md @BRAND.md
-This Hero feels generic. Re-read the references (Sotheby's, Aman). 
+@docs/DESIGN.md @docs/BRAND.md
+This Hero feels generic. Re-read the v2 references (Linear, Aesop, Compass, Brunello Cucinelli). 
 Use Opus. Iterate until it stops feeling like a template.
 ```
 

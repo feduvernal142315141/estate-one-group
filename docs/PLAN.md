@@ -21,7 +21,7 @@ The MVP is launchable when:
 - [ ] At least 5 real properties are listed with full content (or 5 well-designed placeholder properties marked as such)
 - [ ] Lead-capture forms work end-to-end (form → email to Adiel via Resend)
 - [ ] The site passes Lighthouse 95+ on the homepage and a property detail page
-- [ ] All 10 critical corrections from `DESIGN_REVIEW.md` are resolved
+- [ ] All v1 heritage patterns are removed (no Playfair italic in headlines, no uppercase tracked nav, no gold borders, no dark hero) — site matches docs/DESIGN.md v2 spec
 - [ ] Mobile experience is at parity with desktop (not a degraded fallback)
 - [ ] Domain is configured and live on Vercel
 
@@ -79,7 +79,7 @@ Goal: arrive at a clean baseline before adding new features.
 
 ### Tasks
 
-- [ ] Read all docs (`CLAUDE.md`, `DESIGN.md`, `DESIGN_REVIEW.md`, `BRAND.md`, `ARCHITECTURE.md`)
+- [ ] Read all docs (`CLAUDE.md`, `docs/DESIGN.md`, `docs/BRAND.md`, `docs/ARCHITECTURE.md`, `docs/CONTENT.md`)
 - [ ] Place real brand assets in `public/brand/` (logo.png, logo-mono.png, founders.jpg)
 - [ ] Update `package.json` dependencies (next-intl, framer-motion, etc.)
 - [ ] Configure `next.config.mjs` for image domains, i18n bootstrap
@@ -87,7 +87,7 @@ Goal: arrive at a clean baseline before adding new features.
 - [ ] Configure `next/font` to load Playfair Display + Inter properly
 - [ ] Delete the inline implementation of `app/page.tsx` (700+ lines of duplicated code)
 - [ ] Find/replace `Estate Heritage` → `Estate One Group` everywhere
-- [ ] Replace placeholder logo div with real PNG (correction #1 from DESIGN_REVIEW)
+- [ ] Replace placeholder logo div with real PNG from public/brand/logo.png
 - [ ] Set up Sentry, Vercel Analytics, PostHog (env vars only, instrumentation later)
 - [ ] Create `content/properties.ts` with 5 real Miami properties (see CONTENT.md)
 - [ ] Set up GitHub repo with branch protection
@@ -141,7 +141,7 @@ Goal: hero, header, footer, and shared design primitives are at 9/10 quality.
 - [ ] `<Input>` with bottom-border style
 - [ ] `<Reveal>` motion wrapper (fade + translateY on scroll)
 
-**Definition of done:** all 10 critical corrections from DESIGN_REVIEW are resolved. The hero, header, and footer are production-quality.
+**Definition of done:** all v1 heritage patterns are removed and v2 design system is applied consistently. The hero, header, and footer are production-quality.
 
 ## Phase 2: Catalog + property detail (Weeks 4–5)
 

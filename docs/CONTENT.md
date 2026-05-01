@@ -8,10 +8,10 @@
 {
   "brand": {
     "name": "Estate One Group",
-    "tagline_en": "Where luxury becomes home.",
-    "tagline_es": "Donde el lujo se convierte en hogar.",
-    "shortDescription_en": "Discreet luxury real estate in South Florida.",
-    "shortDescription_es": "Bienes raíces de lujo, con discreción, en el sur de Florida."
+    "tagline_en": "Miami real estate, considered.",
+    "tagline_es": "Miami real estate, con criterio.",
+    "shortDescription_en": "Modern real estate in South Florida. Premium homes, off-market access.",
+    "shortDescription_es": "Real estate moderno en el sur de Florida. Propiedades premium, acceso fuera de mercado."
   }
 }
 ```
@@ -27,58 +27,52 @@
 | `nav.journal` | Journal | Diario |
 | `nav.about` | The Firm | La Firma |
 | `nav.contact` | Contact | Contacto |
-| `nav.scheduleConsultation` | Schedule Consultation | Agende una asesoría |
+| `nav.scheduleConsultation` | Contact us | Contáctanos |
 | `nav.clientLogin` | Client Login | Acceso de Clientes |
 
 ## Hero (homepage)
 
 ### English
-- **Eyebrow:** `MIAMI · SOUTH FLORIDA`
-- **Headline (line 1, italic, cream):** `Where luxury`
-- **Headline (line 2, italic, gold):** `becomes home.`
-- **Subhead:** `A curated portfolio of South Florida's most extraordinary residences, presented by advisors who understand that a home is the most personal investment of all.`
-- **CTA primary:** `EXPLORE THE COLLECTION`
-- **CTA ghost:** `SCHEDULE A PRIVATE TOUR →`
-- **Featured pill:** `FEATURED RESIDENCE` / `Villa Aurora · Sunny Isles`
-- **Scroll cue:** `SCROLL`
+- **Eyebrow:** `Miami · South Florida`
+- **Headline:** `Miami real estate, considered.`
+- **Subhead:** `Premium homes in Miami and South Florida. We work with a small number of clients each year, by referral.`
+- **CTA primary:** `Browse Properties`
+- **CTA ghost:** `Schedule a tour`
 
 ### Spanish
-- **Eyebrow:** `MIAMI · SUR DE FLORIDA`
-- **Headline (line 1, italic, cream):** `Donde el lujo`
-- **Headline (line 2, italic, gold):** `se convierte en hogar.`
-- **Subhead:** `Un portafolio curado de las residencias más extraordinarias del sur de Florida, presentado por asesores que comprenden que un hogar es la inversión más personal de todas.`
-- **CTA primary:** `EXPLORAR LA COLECCIÓN`
-- **CTA ghost:** `AGENDE UNA VISITA PRIVADA →`
-- **Featured pill:** `RESIDENCIA DESTACADA` / `Villa Aurora · Sunny Isles`
-- **Scroll cue:** `EXPLORE`
+- **Eyebrow:** `Miami · Sur de Florida`
+- **Headline:** `Miami real estate, con criterio.`
+- **Subhead:** `Propiedades premium en Miami y el sur de Florida. Trabajamos con un número limitado de clientes al año, por referencia.`
+- **CTA primary:** `Ver propiedades`
+- **CTA ghost:** `Agendar una visita`
 
 ## Floating search
 
 | Key | EN | ES |
 |---|---|---|
 | `search.location` | Location | Ubicación |
-| `search.lifestyle` | Lifestyle | Estilo de vida |
+| `search.propertyType` | Property type | Tipo de propiedad |
 | `search.price` | Price | Precio |
 | `search.bedrooms` | Bedrooms | Habitaciones |
 | `search.placeholder.location` | Miami Beach, FL | Miami Beach, FL |
-| `search.placeholder.lifestyle` | Waterfront · Penthouse · Estate | Frente al mar · Penthouse · Estate |
+| `search.placeholder.propertyType` | Condo · House · Penthouse · Estate | Condo · Casa · Penthouse · Estate |
 | `search.placeholder.price` | $1M — Unlimited | $1M — Sin límite |
 | `search.placeholder.bedrooms` | Any | Cualquiera |
-| `search.submit` | Discover | Descubrir |
+| `search.submit` | Search | Buscar |
 
-## "The Collection" section header (homepage)
+## Properties section (homepage)
 
 ### EN
-- **Eyebrow:** `THE COLLECTION`
-- **Headline:** *Extraordinary residences, thoughtfully curated.*
-- **Description:** `Each property in our portfolio is selected for its architectural distinction, location, and the lifestyle it offers — never for volume.`
-- **CTA:** `VIEW THE FULL COLLECTION`
+- **Eyebrow:** `Selected homes`
+- **Headline:** `Properties currently for sale.`
+- **Description:** `We list a small number of homes at a time. Each one is selected for its architecture, location, and condition.`
+- **CTA:** `See all properties`
 
 ### ES
-- **Eyebrow:** `LA COLECCIÓN`
-- **Headline:** *Residencias extraordinarias, cuidadosamente seleccionadas.*
-- **Description:** `Cada propiedad en nuestro portafolio se elige por su distinción arquitectónica, su ubicación y el estilo de vida que ofrece — nunca por volumen.`
-- **CTA:** `VER LA COLECCIÓN COMPLETA`
+- **Eyebrow:** `Propiedades seleccionadas`
+- **Headline:** `Propiedades disponibles.`
+- **Description:** `Presentamos un número reducido de propiedades a la vez. Cada una se elige por su arquitectura, ubicación y estado.`
+- **CTA:** `Ver todas las propiedades`
 
 ## Property seed data (5 listings for MVP)
 
@@ -96,20 +90,16 @@ export const seedProperties: Property[] = [
       es: 'Villa Aurora',
     },
     description: {
-      en: `Sunlight enters Villa Aurora through floor-to-ceiling glass that disappears into the walls — a deliberate choice by the residence's architect, who designed the home to dissolve the boundary between interior and the Atlantic.
+      en: `Villa Aurora was designed by Chad Oppenheim in 2021 — poured concrete shell, Italian travertine throughout, 5,800 square feet across two levels with a 60-foot infinity pool aligned with the ocean horizon.
 
-Built in 2021 with a poured-concrete shell and Italian travertine throughout, the home spans 5,800 square feet across two levels, including a 60-foot infinity edge pool that reads as continuous with the ocean horizon.
+Sunny Isles Beach sits between Aventura and Bal Harbour. Bal Harbour Shops and a private marina are four minutes by car.
 
-Sunny Isles Beach has become a quiet alternative to South Beach for owners who value privacy. Bal Harbour Shops, the K-12 RASG Hebrew Academy, and a private marina are within four minutes by car.
+This is the first time Villa Aurora has been offered since completion.`,
+      es: `Villa Aurora fue diseñada por Chad Oppenheim en 2021 — estructura de hormigón vertido, travertino italiano en todo el espacio, 539 metros cuadrados en dos niveles con una piscina infinity de 18 metros alineada con el horizonte oceánico.
 
-Properties of this provenance trade rarely. Villa Aurora is offered for the first time since its completion.`,
-      es: `La luz natural entra a Villa Aurora a través de cristales de piso a techo que desaparecen en las paredes — una decisión consciente del arquitecto, quien diseñó la residencia para diluir el límite entre el interior y el Atlántico.
+Sunny Isles Beach se ubica entre Aventura y Bal Harbour. Bal Harbour Shops y una marina privada quedan a cuatro minutos en automóvil.
 
-Construida en 2021 con una estructura de hormigón vertido y travertino italiano en todo el espacio, la residencia se extiende sobre 539 metros cuadrados en dos niveles, e incluye una piscina infinity de 18 metros que se percibe continua con el horizonte oceánico.
-
-Sunny Isles Beach se ha convertido en una alternativa discreta a South Beach para propietarios que valoran la privacidad. Bal Harbour Shops, la academia RASG Hebrew K-12 y una marina privada se encuentran a cuatro minutos en automóvil.
-
-Propiedades de esta procedencia rara vez salen al mercado. Villa Aurora se ofrece por primera vez desde su finalización.`,
+Es la primera vez que Villa Aurora sale al mercado desde su finalización.`,
     },
     price: 425000000, // cents → $4,250,000
     currency: 'USD',
@@ -145,20 +135,16 @@ Propiedades de esta procedencia rara vez salen al mercado. Villa Aurora se ofrec
       es: 'The Atelier',
     },
     description: {
-      en: `On the 47th floor of an Edgewater landmark, The Atelier is a residence in the literal sense — a home built around a working artist's studio, with northern light, 14-foot ceilings, and a 1,200-square-foot terrace that frames Biscayne Bay.
+      en: `On the 47th floor of an Edgewater tower, The Atelier has 14-foot ceilings, a 1,200-square-foot terrace facing Biscayne Bay, and an interior designed by a Milan-based studio — hand-troweled Venetian plaster, white oak floors with ebony inlays, custom Boffi kitchen.
 
-The interior was designed in collaboration with a Milan-based studio. Materials include hand-troweled Venetian plaster, white oak floors with ebony inlays, and a custom kitchen by Boffi.
+Edgewater is Miami's quietest creative district. Wynwood and the Design District are minutes away.
 
-Edgewater is Miami's quietest creative district. Wynwood and the Design District are minutes away; the airport is reachable in fifteen.
+A home for someone who needs space to think, with a view.`,
+      es: `En el piso 47 de una torre emblemática de Edgewater, The Atelier tiene techos de 4 metros, una terraza de 111 metros cuadrados frente a la bahía Biscayne, y un interior diseñado por un estudio de Milán — estuco veneciano aplicado a mano, pisos de roble blanco con incrustaciones de ébano, cocina Boffi a medida.
 
-A residence for someone who needs space to think, alone, with a view.`,
-      es: `En el piso 47 de un edificio emblemático de Edgewater, The Atelier es una residencia en el sentido literal de la palabra — un hogar construido alrededor del estudio de un artista, con luz del norte, techos de 4 metros, y una terraza de 111 metros cuadrados que enmarca la bahía Biscayne.
+Edgewater es el distrito creativo más tranquilo de Miami. Wynwood y el Design District quedan a minutos.
 
-El interior fue diseñado en colaboración con un estudio de Milán. Los materiales incluyen estuco veneciano aplicado a mano, pisos de roble blanco con incrustaciones de ébano, y una cocina personalizada de Boffi.
-
-Edgewater es el distrito creativo más tranquilo de Miami. Wynwood y el Design District quedan a minutos; el aeropuerto está a quince.
-
-Una residencia para alguien que necesita espacio para pensar, en soledad, con una vista.`,
+Una casa para alguien que necesita espacio para pensar, con vista.`,
     },
     price: 289000000,
     currency: 'USD',
@@ -192,20 +178,16 @@ Una residencia para alguien que necesita espacio para pensar, en soledad, con un
       es: 'Casa del Mar',
     },
     description: {
-      en: `Casa del Mar sits on a third of an acre on a guard-gated street in Coral Gables, behind a wall of mature banyan trees that have grown together over a century.
-
-The house itself is a 1932 Mediterranean Revival, restored in 2019 by a preservation-focused firm that retained the original cast-stone fireplaces, hand-hewn cypress beams, and barrel-tile roof while replacing every system inside the walls.
+      en: `Casa del Mar is a 1932 Mediterranean Revival on a third of an acre on a guard-gated street in Coral Gables, behind a wall of century-old banyan trees. A preservation-focused firm restored it in 2019 — the original cast-stone fireplaces, hand-hewn cypress beams, and barrel-tile roof were retained; every system inside the walls was replaced.
 
 Coral Gables is South Florida's most enduring address. The Riviera Country Club is two blocks away, the Biltmore three.
 
-A house with provenance, restored to last another hundred years.`,
-      es: `Casa del Mar se encuentra sobre un tercio de acre, en una calle privada de Coral Gables, detrás de un muro de banyans maduros que han crecido entrelazados durante un siglo.
-
-La residencia es un Mediterranean Revival de 1932, restaurado en 2019 por una firma especializada en preservación que conservó las chimeneas originales de piedra fundida, las vigas de ciprés talladas a mano, y el techo de tejas de barril, mientras reemplazaba cada sistema interno de la casa.
+A house with a century of history, restored to last another hundred years.`,
+      es: `Casa del Mar es un Mediterranean Revival de 1932 sobre un tercio de acre en una calle privada de Coral Gables, detrás de un muro de banyans centenarios. Una firma especializada en preservación la restauró en 2019 — se conservaron las chimeneas originales de piedra fundida, las vigas de ciprés talladas a mano y el techo de tejas de barril; todos los sistemas internos fueron reemplazados.
 
 Coral Gables es la dirección más perdurable del sur de Florida. El Riviera Country Club queda a dos cuadras, el Biltmore a tres.
 
-Una casa con procedencia, restaurada para perdurar otros cien años.`,
+Una casa con un siglo de historia, restaurada para perdurar otros cien años.`,
     },
     price: 675000000,
     currency: 'USD',
@@ -240,18 +222,14 @@ Una casa con procedencia, restaurada para perdurar otros cien años.`,
       es: 'Continuum Sky',
     },
     description: {
-      en: `The full top floor of Continuum North, with private elevator access and a 360-degree view that includes the Atlantic, Government Cut, and the Miami skyline.
+      en: `Continuum Sky occupies the full top floor of Continuum North — 6,400 square feet with private elevator access and 360-degree views of the Atlantic, Government Cut, and the Miami skyline. The original four-bedroom plan was reconfigured into three primary suites, each with its own terrace, plus a study with a private balcony facing Fisher Island.
 
-The 6,400-square-foot residence has been opened up from the original four-bedroom layout to three primary suites, each with its own terrace, plus a study with a private balcony facing Fisher Island.
-
-South of Fifth has become Miami's most discreet neighborhood. The South Pointe Park promenade is two minutes on foot.
+South of Fifth is Miami's most discreet neighborhood. South Pointe Park is two minutes on foot.
 
 A penthouse for someone who has earned the view.`,
-      es: `El piso completo en el último nivel de Continuum North, con acceso de elevador privado y una vista de 360 grados que abarca el Atlántico, Government Cut, y el skyline de Miami.
+      es: `Continuum Sky ocupa el piso completo en la cima de Continuum North — 595 metros cuadrados con acceso de elevador privado y vistas de 360 grados al Atlántico, Government Cut y el skyline de Miami. La distribución original de cuatro habitaciones fue reconfigurada en tres suites principales, cada una con su terraza, más un estudio con balcón privado frente a Fisher Island.
 
-La residencia de 595 metros cuadrados se reconfiguró del diseño original de cuatro habitaciones, a tres suites principales — cada una con su propia terraza — más un estudio con balcón privado que mira hacia Fisher Island.
-
-South of Fifth se ha convertido en el barrio más discreto de Miami. El paseo de South Pointe Park queda a dos minutos a pie.
+South of Fifth es el barrio más discreto de Miami. El paseo de South Pointe Park queda a dos minutos a pie.
 
 Un penthouse para alguien que ha ganado la vista.`,
     },
@@ -287,18 +265,14 @@ Un penthouse para alguien que ha ganado la vista.`,
       es: 'Banyan House',
     },
     description: {
-      en: `Banyan House is a 2014 architectural home tucked into a half-acre lot in Coconut Grove, designed by a Miami firm whose principal trained under Norman Foster.
+      en: `Banyan House is a 2014 architectural home on a half-acre lot in Coconut Grove, designed by a firm whose principal trained under Norman Foster. The house is organized around a courtyard with a single century-old banyan at its center; every primary room opens to it. Construction is concrete and glass, with board-formed concrete and ipê wood throughout.
 
-The home is organized around a courtyard with a single century-old banyan tree at its center; every primary room opens to it. The construction is concrete and glass, the materials are board-formed concrete and ipê wood.
+Coconut Grove is Miami's oldest residential neighborhood. The sailing club, two private K-12 schools, and the Vizcaya Museum are within walking distance.
 
-Coconut Grove is Miami's oldest residential neighborhood. The Grove sailing club, two private K-12 schools, and the Vizcaya Museum are within walking distance.
+A home for someone who understands architecture as a way of life.`,
+      es: `Banyan House es una residencia arquitectónica de 2014 en un lote de medio acre en Coconut Grove, diseñada por una firma cuyo socio principal se formó con Norman Foster. La casa se organiza alrededor de un patio con un solo banyan centenario en el centro; cada habitación principal se abre hacia él. La construcción es de hormigón y cristal, con hormigón de encofrado de tabla y madera de ipé en todo el espacio.
 
-A house for someone who values architecture as a way of life.`,
-      es: `Banyan House es una residencia arquitectónica de 2014, asentada en un lote de medio acre en Coconut Grove, diseñada por una firma de Miami cuyo socio principal se formó con Norman Foster.
-
-La casa se organiza alrededor de un patio con un solo banyan centenario en el centro; cada habitación principal se abre hacia él. La construcción es de hormigón y cristal; los materiales son hormigón con encofrado de tabla y madera de ipé.
-
-Coconut Grove es el vecindario residencial más antiguo de Miami. El club de vela, dos colegios privados K-12, y el Museo Vizcaya quedan a distancia caminable.
+Coconut Grove es el vecindario residencial más antiguo de Miami. El club de vela, dos colegios privados K-12 y el Museo Vizcaya quedan a distancia caminable.
 
 Una casa para alguien que entiende la arquitectura como una forma de vida.`,
     },
@@ -363,40 +337,36 @@ Una casa para alguien que entiende la arquitectura como una forma de vida.`,
 ## About / The Firm page
 
 ### EN
-**Eyebrow:** `THE FIRM`
-**Headline:** *A practice, not a portal.*
-**Body (4 paragraphs):**
-> Estate One Group is a small, founder-led real estate practice in South Florida. We work with a limited number of clients each year, by introduction.
+**Eyebrow:** `The Firm`
+**Headline:** `A modern real estate firm in South Florida.`
+**Body (3 paragraphs):**
+> Estate One Group is a small, founder-led real estate firm in South Florida. We work with a limited number of clients each year, by referral.
 >
-> The work is straightforward: we identify residences worth owning — often before they are publicly listed — and we represent the people who own them with discretion and architectural literacy. We do not chase volume.
+> Our work is straightforward: we identify homes worth owning — often before they are publicly listed — and we represent the people who own them. We pay attention to architecture, materials, and what makes a neighborhood matter long-term.
 >
-> Our practice is bilingual by design. Miami's most interesting buyers and sellers move between English and Spanish without thinking, and so do we.
->
-> If you have read this far, we would be glad to meet.
+> We are bilingual by design. Miami's most interesting buyers and sellers move between English and Spanish without thinking, and so do we. If you have read this far, we would be glad to meet.
 
-**CTA:** `Schedule a conversation →`
+**CTA:** `Contact us`
 
 ### ES
-**Eyebrow:** `LA FIRMA`
-**Headline:** *Una práctica, no un portal.*
+**Eyebrow:** `La Firma`
+**Headline:** `Una firma moderna de real estate en el sur de Florida.`
 **Body:**
-> Estate One Group es una práctica pequeña, dirigida por sus fundadores, de bienes raíces en el sur de Florida. Trabajamos con un número limitado de clientes cada año, por referencia.
+> Estate One Group es una firma pequeña de real estate en el sur de Florida, dirigida por sus fundadores. Trabajamos con un número limitado de clientes cada año, por referencia.
 >
-> El trabajo es simple: identificamos residencias que vale la pena poseer — a menudo antes de que se listen públicamente — y representamos a quienes las poseen con discreción y comprensión arquitectónica. No perseguimos volumen.
+> Nuestro trabajo es simple: identificamos casas que vale la pena tener — a menudo antes de que se listen públicamente — y representamos a quienes las poseen. Prestamos atención a la arquitectura, los materiales, y lo que hace que un vecindario importe a largo plazo.
 >
-> Nuestra práctica es bilingüe por diseño. Los compradores y vendedores más interesantes de Miami se mueven entre inglés y español sin pensarlo, y nosotros también.
->
-> Si ha llegado hasta aquí, nos dará gusto conocerlo.
+> Somos bilingües por diseño. Los compradores y vendedores más interesantes de Miami se mueven entre inglés y español sin pensarlo, y nosotros también. Si ha llegado hasta aquí, nos dará gusto conocerle.
 
-**CTA:** `Agendar una conversación →`
+**CTA:** `Contáctanos`
 
 ## Three pillars (used on About + homepage)
 
 | EN | ES |
 |---|---|
-| Off-Market Access | Acceso Fuera de Mercado |
-| Architectural Literacy | Comprensión Arquitectónica |
-| Discretion | Discreción |
+| Off-market access | Acceso fuera de mercado |
+| Architectural focus | Enfoque arquitectónico |
+| Bilingual fluency | Fluidez bilingüe |
 
 ## Forms (lead capture)
 
@@ -408,22 +378,22 @@ Una casa para alguien que entiende la arquitectura como una forma de vida.`,
 | Email | Email address | Correo electrónico |
 | Phone | Phone (optional) | Teléfono (opcional) |
 | Intent | I am interested in… | Me interesa… |
-| Buying | Buying a residence | Comprar una residencia |
-| Selling | Selling a residence | Vender una residencia |
-| Consulting | A consultation | Una asesoría |
+| Buying | Buying a home | Comprar una casa |
+| Selling | Selling a home | Vender una casa |
+| Consulting | Talking to your team | Hablar con su equipo |
 | Tour | Touring a property | Visitar una propiedad |
 | Message | Message (optional) | Mensaje (opcional) |
-| Submit | Send Message | Enviar Mensaje |
-| Success | Thank you. We will be in touch within 24 hours. | Gracias. Nos pondremos en contacto dentro de 24 horas. |
+| Submit | Send | Enviar |
+| Success | Thank you. We'll be in touch within 24 hours. | Gracias. Le contactaremos en las próximas 24 horas. |
 | Error | Something went wrong. Please try again or email us directly. | Algo salió mal. Intente nuevamente o escríbanos directamente. |
 
 ### Schedule tour modal
 
-**EN headline:** *Visit this residence.*
-**EN sub:** `Tours are arranged privately, by appointment. Submit your details and we will be in touch to confirm.`
+**EN headline:** `Visit this home.`
+**EN sub:** `Tours are private, by appointment. Submit your details and we'll confirm.`
 
-**ES headline:** *Visite esta residencia.*
-**ES sub:** `Las visitas se organizan de forma privada, por cita. Comparta sus datos y nos pondremos en contacto para confirmar.`
+**ES headline:** `Visite esta casa.`
+**ES sub:** `Las visitas son privadas, por cita. Comparta sus datos y le confirmamos.`
 
 ## Footer
 
@@ -431,18 +401,18 @@ Una casa para alguien que entiende la arquitectura como una forma de vida.`,
 
 | Group | Items EN | Items ES |
 |---|---|---|
-| Properties | All listings · By neighborhood · Off-market access | Todas las propiedades · Por zona · Acceso fuera de mercado |
-| Firm | The Firm · The Journal · Contact | La Firma · El Diario · Contacto |
+| Properties | All listings · By neighborhood · Off-market | Todas · Por zona · Fuera de mercado |
+| Firm | The Firm · Journal · Contact | La Firma · Diario · Contacto |
 | Contact | +1 (xxx) xxx-xxxx · adiel@estateonegroup.com · Miami, FL | +1 (xxx) xxx-xxxx · adiel@estateonegroup.com · Miami, FL |
 
 ### Newsletter
 
 | Field | EN | ES |
 |---|---|---|
-| Heading | Receive our quarterly journal | Reciba nuestro diario trimestral |
-| Sub | A short letter, four times a year, on the South Florida market and selected residences. | Una carta breve, cuatro veces al año, sobre el mercado del sur de Florida y residencias seleccionadas. |
+| Heading | Stay updated | Manténgase informado |
+| Sub | New listings, off-market opportunities, and notes on the South Florida market. Four times a year. | Nuevas propiedades, oportunidades fuera de mercado, y notas sobre el mercado del sur de Florida. Cuatro veces al año. |
 | Placeholder | your@email.com | su@correo.com |
-| Submit | Subscribe → | Suscribirse → |
+| Submit | Subscribe | Suscribirse |
 
 ### Bottom strip
 
@@ -457,26 +427,26 @@ Una casa para alguien que entiende la arquitectura como una forma de vida.`,
 
 **EN:**
 - **Eyebrow:** `404`
-- **Headline:** *This page could not be found.*
+- **Headline:** `Page not found.`
 - **Sub:** `The link may have been moved, or the page may no longer exist.`
-- **CTA:** `Return to Homepage →`
+- **CTA:** `Back to home`
 
 **ES:**
 - **Eyebrow:** `404`
-- **Headline:** *Esta página no se pudo encontrar.*
-- **Sub:** `El enlace puede haber sido movido, o la página puede ya no existir.`
-- **CTA:** `Volver al inicio →`
+- **Headline:** `Página no encontrada.`
+- **Sub:** `El enlace puede haber sido movido, o la página ya no existe.`
+- **CTA:** `Volver al inicio`
 
 ### Empty filter results
 
-**EN:** *No residences match these filters.* / `Try adjusting your criteria, or [contact us] for off-market opportunities.`
+**EN:** `No homes match these filters. Try adjusting your criteria, or [contact us] for off-market opportunities.`
 
-**ES:** *Ninguna residencia coincide con estos filtros.* / `Pruebe ajustar sus criterios, o [contáctenos] para oportunidades fuera de mercado.`
+**ES:** `No hay casas que coincidan con estos filtros. Intente ajustar los criterios, o [contáctenos] para oportunidades fuera de mercado.`
 
-## Lead notification email (sent to Adiel via Resend)
+## Lead notification email (sent to firm via Resend)
 
-**Subject (EN):** `New inquiry from [Name] · [Property name]`
-**Subject (ES):** `Nueva consulta de [Nombre] · [Nombre de propiedad]`
+**Subject (EN):** `New inquiry — [Name] — [Property name or 'general']`
+**Subject (ES):** `Nueva consulta — [Nombre] — [Nombre de propiedad o 'general']`
 
 ```
 Name: [name]
@@ -484,7 +454,7 @@ Email: [email]
 Phone: [phone or —]
 Source: [property page / contact / tour request]
 Property: [property slug or —]
-Intent: [buying / selling / consulting / tour]
+Intent: [buying / selling / tour / talking to team]
 Language: [en / es]
 
 Message:
@@ -496,12 +466,11 @@ Sent from estateonegroup.com on [timestamp]
 
 ## Things still missing (to gather before launch)
 
-- [ ] Real founders bio (Adiel + co-founder) — 80–120 words each, EN + ES
+- [ ] Real founders bios — 80–120 words each, EN + ES (names and details pending decision)
 - [ ] Real phone number for the firm
 - [ ] Real office address (for `/contact`)
 - [ ] Real social handles (IG, LinkedIn)
 - [ ] At least 3 real testimonials with permission to publish
 - [ ] Real privacy policy + terms (consult a lawyer)
-- [ ] Press logos if any (Forbes, Architectural Digest, etc.)
-- [ ] Real property photography for the 5 seed listings (or commission)
-- [ ] Decision: which domain (estateonegroup.com / .us / .group / etc.)
+- [ ] Real property photography for the 5 seed listings
+- [ ] Domain decision: estateonegroup.com / .us / .group / etc.

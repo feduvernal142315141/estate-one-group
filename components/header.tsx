@@ -1,151 +1,248 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
+type Locale = "en" | "es";
+
+type NavItem = { label: string; href: string };
+
+const navItems: readonly NavItem[] = [
+  { label: "Home", href: "#hero" },
+  { label: "Properties", href: "#properties" },
+  { label: "Services", href: "#services" },
+  { label: "The Firm", href: "#about" },
+  { label: "Contact", href: "#contact" },
+] as const;
+
+const SCROLL_THRESHOLD = 80;
+
+const EASE_OUT_SOFT = "ease-[var(--ease-out-soft)]";
+
+/**
+ * Estate One Group site header.
+ *
+ * Editorial luxury navbar: real PNG isotype + wordmark, hairline gold
+ * accents, ghost-outlined gold CTA, and a visual-only EN | ES toggle.
+ * Past 80px of scroll, padding collapses, the bar gains a charcoal
+ * backdrop-blur, and a hairline gold border appears. Below the `lg`
+ * breakpoint the right side becomes a hamburger that opens a full-screen
+ * overlay menu.
+ */
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [locale, setLocale] = useState<Locale>("en");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navItems = [
-    { label: "Inicio", href: "#hero" },
-    { label: "Servicios", href: "#services" },
-    { label: "Propiedades", href: "#properties" },
-    { label: "Nosotros", href: "#about" },
-    { label: "Contacto", href: "#contact" },
-  ];
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [isMobileMenuOpen]);
+
+  const closeMobile = () => setIsMobileMenuOpen(false);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-[400ms] ${EASE_OUT_SOFT} ${
         isScrolled
-          ? "bg-charcoal/95 backdrop-blur-md py-3 shadow-xl"
-          : "bg-transparent py-5"
+          ? "border-b-[0.5px] border-brand-gold/15 bg-charcoal/95 py-3 backdrop-blur-md"
+          : "border-b-[0.5px] border-transparent bg-transparent py-6"
       }`}
     >
-      {/* Top Bar */}
-      <div
-        className={`border-b border-gold/20 pb-2 mb-2 transition-opacity duration-300 ${
-          isScrolled ? "opacity-0 h-0 pb-0 mb-0 overflow-hidden" : "opacity-100"
-        }`}
-      >
-        <div className="container mx-auto px-6 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
-            <a
-              href="tel:+1234567890"
-              className="flex items-center gap-2 text-cream/80 hover:text-gold transition-colors"
-            >
-              <Phone className="w-3 h-3" />
-              <span>+1 (234) 567-890</span>
-            </a>
-            <a
-              href="mailto:info@estateonegroup.com"
-              className="flex items-center gap-2 text-cream/80 hover:text-gold transition-colors"
-            >
-              <Mail className="w-3 h-3" />
-              <span>info@estateonegroup.com</span>
-            </a>
-          </div>
-          <p className="text-cream/60 hidden md:block">
-            Excelencia en Bienes Raíces de Lujo
-          </p>
-        </div>
-      </div>
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-8 px-5 lg:px-14">
+        <Link
+          href="/"
+          aria-label="Estate One Group"
+          className="inline-flex items-center gap-3"
+        >
+          <BrandLogo isScrolled={isScrolled} />
+        </Link>
 
-      {/* Main Navigation */}
-      <div className="container mx-auto px-6">
-        <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 border-2 border-gold flex items-center justify-center">
-              <span className="text-gold font-serif text-lg font-bold">E</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-cream font-serif text-xl tracking-wider">
-                ESTATE ONE
-              </span>
-              <span className="text-gold text-[10px] tracking-[0.3em] uppercase">
-                Group
-              </span>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-cream/90 hover:text-gold transition-colors text-sm tracking-wide uppercase relative group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <a
-              href="#contact"
-              className="px-6 py-3 bg-gold text-charcoal font-medium text-sm tracking-wide uppercase hover:bg-gold-light transition-all duration-300"
-            >
-              Agenda tu Cita
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-cream p-2"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </nav>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden fixed inset-0 top-[72px] bg-charcoal/98 backdrop-blur-lg transition-all duration-500 ${
-          isMobileMenuOpen
-            ? "opacity-100 visible"
-            : "opacity-0 invisible pointer-events-none"
-        }`}
-      >
-        <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+        <nav
+          aria-label="Primary"
+          className="hidden items-center gap-10 lg:flex"
+        >
           {navItems.map((item) => (
             <a
-              key={item.label}
+              key={item.href}
               href={item.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-cream text-2xl font-serif hover:text-gold transition-colors border-b border-gold/20 pb-4"
+              className={`group relative text-[11px] font-medium uppercase tracking-[0.22em] text-brand-cream/80 transition-colors duration-[200ms] hover:text-brand-gold`}
             >
               {item.label}
+              <span
+                aria-hidden
+                className={`pointer-events-none absolute -bottom-1.5 left-0 h-px w-0 bg-brand-gold transition-all duration-[400ms] ${EASE_OUT_SOFT} group-hover:w-full`}
+              />
             </a>
           ))}
+        </nav>
+
+        <div className="hidden items-center gap-8 lg:flex">
+          <LangToggle locale={locale} onChange={setLocale} />
           <a
             href="#contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 px-8 py-4 bg-gold text-charcoal font-medium text-center tracking-wide uppercase"
+            className={`inline-block border border-brand-gold/40 px-7 py-3 text-[10px] font-medium uppercase tracking-[0.25em] text-brand-gold transition-all duration-[400ms] ${EASE_OUT_SOFT} hover:border-brand-gold hover:bg-brand-gold hover:text-charcoal`}
           >
-            Agenda tu Cita
+            Schedule Consultation
+          </a>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          className="p-2 text-brand-cream transition-colors duration-[200ms] hover:text-brand-gold lg:hidden"
+        >
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6" strokeWidth={1.2} />
+          ) : (
+            <Menu className="h-6 w-6" strokeWidth={1.2} />
+          )}
+        </button>
+      </div>
+
+      <MobileMenu
+        open={isMobileMenuOpen}
+        onClose={closeMobile}
+        locale={locale}
+        onLocaleChange={setLocale}
+      />
+    </header>
+  );
+}
+
+function BrandLogo({ isScrolled }: { isScrolled: boolean }) {
+  return (
+    <>
+      <Image
+        src="/brand/logo.png"
+        alt=""
+        width={582}
+        height={720}
+        priority
+        className={`w-auto transition-all duration-[400ms] ${EASE_OUT_SOFT} ${
+          isScrolled ? "h-9" : "h-10 lg:h-12"
+        }`}
+      />
+      <div className="flex flex-col justify-center">
+        <span
+          className={`font-serif font-normal leading-none tracking-normal text-brand-cream/90 transition-all duration-[400ms] ${EASE_OUT_SOFT} ${
+            isScrolled ? "text-[14px]" : "text-[16px]"
+          }`}
+        >
+          Estate One
+        </span>
+        <div
+          aria-hidden
+          className="my-1.5 h-px w-7 bg-brand-gold/60"
+        />
+        <span className="font-sans text-[8px] font-normal uppercase leading-none tracking-[0.4em] text-brand-gold">
+          GROUP
+        </span>
+      </div>
+    </>
+  );
+}
+
+function LangToggle({
+  locale,
+  onChange,
+}: {
+  locale: Locale;
+  onChange: (next: Locale) => void;
+}) {
+  const base =
+    "text-[11px] font-medium uppercase tracking-[0.22em] transition-colors duration-[200ms]";
+  const active = "text-brand-gold";
+  const inactive = "text-brand-cream/50 hover:text-brand-cream";
+
+  return (
+    <div
+      role="group"
+      aria-label="Language"
+      className="flex items-center gap-3"
+    >
+      <button
+        type="button"
+        onClick={() => onChange("en")}
+        aria-pressed={locale === "en"}
+        className={`${base} ${locale === "en" ? active : inactive}`}
+      >
+        EN
+      </button>
+      <span aria-hidden className="h-3 w-px bg-brand-gold/30" />
+      <button
+        type="button"
+        onClick={() => onChange("es")}
+        aria-pressed={locale === "es"}
+        className={`${base} ${locale === "es" ? active : inactive}`}
+      >
+        ES
+      </button>
+    </div>
+  );
+}
+
+function MobileMenu({
+  open,
+  onClose,
+  locale,
+  onLocaleChange,
+}: {
+  open: boolean;
+  onClose: () => void;
+  locale: Locale;
+  onLocaleChange: (next: Locale) => void;
+}) {
+  return (
+    <div
+      aria-hidden={!open}
+      className={`fixed inset-0 top-0 z-40 flex flex-col bg-charcoal/98 backdrop-blur-lg transition-opacity duration-[700ms] ${EASE_OUT_SOFT} lg:hidden ${
+        open
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0"
+      }`}
+    >
+      <div className="flex flex-1 flex-col justify-between px-5 pb-12 pt-28">
+        <ul className="flex flex-col border-t-[0.5px] border-brand-gold/15">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                onClick={onClose}
+                className="block border-b-[0.5px] border-brand-gold/15 py-6 font-serif text-[28px] italic text-brand-cream transition-colors duration-[200ms] hover:text-brand-gold"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-col items-center gap-8">
+          <LangToggle locale={locale} onChange={onLocaleChange} />
+          <a
+            href="#contact"
+            onClick={onClose}
+            className={`block w-full border border-brand-gold/40 py-4 text-center text-[10px] font-medium uppercase tracking-[0.25em] text-brand-gold transition-all duration-[400ms] ${EASE_OUT_SOFT} hover:bg-brand-gold hover:text-charcoal`}
+          >
+            Schedule Consultation
           </a>
         </div>
       </div>
-    </header>
+    </div>
   );
 }

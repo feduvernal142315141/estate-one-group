@@ -109,7 +109,6 @@ estate-one-web/
 │   └── locale.ts
 ├── CLAUDE.md
 ├── DESIGN.md
-├── DESIGN_REVIEW.md
 ├── BRAND.md
 ├── PLAN.md
 ├── ROADMAP.md
