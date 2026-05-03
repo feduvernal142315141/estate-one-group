@@ -57,48 +57,58 @@
 
 ---
 
-## Sprint 1: Header & Hero (Week 2)
+## Sprint 1: Header & Hero (Week 2) — ✅ SHIPPED at v3
 
-### Header component
-| Task | Model | Why |
+> **Status (2026-05):** Sprint 1 closed at v3 after pivot from v2 (text-only) → v3 (photo-led). Above-the-fold homepage is production quality. Floating search and Three Pillars also shipped in this sprint (originally planned for Sprint 2/3).
+
+### Header component — ✅ shipped
+| Task | Model used | Status |
 |---|---|---|
-| Refactor `<Header>` per DESIGN.md spec | 🔴 | This is a brand-defining component |
-| Build `<LanguageToggle>` component | 🟡 | Clear spec |
-| Wire active route detection for nav underline | 🟡 | Logic + style |
-| Build mobile menu (full-screen, dark) | 🔴 | Brand-defining mobile experience |
-| Add scroll-aware backdrop blur and padding collapse | 🟡 | Standard pattern |
-| Build `<Logo>` brand component (3 variants) | 🟡 | Wraps next/image |
+| Refactor `<Header>` per DESIGN.md v3 spec | 🔴 | Done — fixed transparent over hero, dark glass on scroll |
+| Build `<LanguageToggle>` (gold active state) | 🟡 | Done — inline in header.tsx |
+| Wire active route detection for nav underline | 🟡 | Deferred — pending i18n + routing wire-up |
+| Build mobile menu (full-screen charcoal/95 glass) | 🔴 | Done |
+| Add scroll-aware backdrop blur + padding collapse | 🟡 | Done — 300ms transition |
+| Build `<Logo>` brand component (3 variants) | 🟡 | Deferred — currently inline lockup, extract on third use |
 
-### Hero component
-| Task | Model | Why |
+### Hero component — ✅ shipped (v3, pivoted from v2)
+| Task | Model used | Status |
 |---|---|---|
-| Refactor `<Hero>` per DESIGN.md spec | 🔴 | Most important component |
-| Build editorial headline with italic + gold accent | 🔴 | Typography is the brand |
-| Build dark gradient background with radial gold glow | 🟡 | Spec is clear |
-| Add subtle architectural line decorations (low opacity) | 🟡 | Decorative SVG |
-| Build CTA buttons (primary gold + ghost arrow) | 🟡 | Per Button spec |
-| Build scroll cue (bottom-left) | 🟢 | Small decorative |
-| Build "FEATURED RESIDENCE" pill (bottom-right) | 🟡 | Composition matters |
-| Wire `prefers-reduced-motion` for the hero | 🟢 | Standard |
+| Refactor `<Hero>` per DESIGN.md v3 spec | 🔴 | Done — full-bleed photo + 4-layer overlay + grain |
+| Build editorial headline (Inter 88px weight 300, 2 lines forced) | 🔴 | Done |
+| Build cinematic overlay (4 gradient layers + grain) | 🟡 | Done |
+| ~~Add subtle architectural line decorations~~ | — | Removed — not in v3 |
+| Build CTA buttons (oxblood primary + cream ghost) | 🟡 | Done — see Buttons spec in DESIGN.md |
+| ~~Build scroll cue (bottom-left)~~ | — | Removed — not in v3 |
+| ~~Build "FEATURED RESIDENCE" pill~~ | — | Removed — not in v3 |
+| Wire `prefers-reduced-motion` | 🟢 | Done — `motion-reduce:transition-none` everywhere |
 
-### Shared primitives needed for hero/header
-| Task | Model | Why |
+### Bonus delivered in Sprint 1 (originally Sprint 2/3)
+| Task | Model used | Status |
 |---|---|---|
-| Build `<Container>` (max, narrow, text widths) | 🟢 | Boilerplate |
-| Build `<Eyebrow>` component | 🟢 | Tiny styled span |
-| Build `<HeritageDivider>` component | 🟢 | Gold horizontal line |
-| Build `<Button>` with 4 variants | 🟡 | Variant logic |
-| Build `<Reveal>` (fade + translateY motion wrapper) | 🟡 | Framer Motion |
+| Build `<FloatingSearch>` (single-surface luxury console) | 🔴 | Done — `components/search.tsx` |
+| Build `<Pillars>` (3 verifiable claims) | 🟡 | Done — `components/pillars.tsx` |
+| Seed bilingual home content | 🟢 | Done — `content/home.ts` |
 
-### Quality gate
-| Task | Model | Why |
+### Shared primitives — ⏳ deferred per "extract on third use"
+| Task | Model | Why deferred |
 |---|---|---|
-| Take desktop + mobile screenshots, compare against DESIGN.md | 🔴 | Visual judgment |
-| If hero feels "correct but not iconic": iterate with Opus | 🔴 | Brand judgment |
-| Run Lighthouse on the homepage | 🟢 | Read numbers |
-| Fix any A11y warnings | 🟡 | Standard |
+| Build `<Container>` | 🟢 | Used twice; extract when third consumer ships |
+| Build `<Button>` with variants | 🟡 | Defer until Properties cards land — variants will solidify |
+| Build `<Reveal>` (Framer Motion) | 🟡 | Defer until first below-the-fold reveal section needs it |
+| ~~Build `<Eyebrow>`~~ | — | Two distinct registers (hero gold-upper vs section neutral); not generic |
+| ~~Build `<HeritageDivider>`~~ | — | Removed in v2, did not return |
 
-**Sprint 1 model spend rough estimate:** 40% Opus, 50% Sonnet, 10% Haiku.
+### Quality gate — ✅ passed
+| Task | Status |
+|---|---|
+| Multi-round visual review with stakeholder | Done — 4 rounds of polish iteration |
+| Build green on every commit | Done — `pnpm build` clean throughout |
+| TypeScript strict, no `any` | Done |
+| `motion-reduce` honored everywhere | Done |
+| Lighthouse audit | Pending — runs after Footer ships at v3 |
+
+**Sprint 1 model spend (actual):** ~70% Opus (4 rounds of polish were judgment-heavy), ~30% Sonnet, 0% Haiku.
 
 ---
 

@@ -101,47 +101,61 @@ Goal: arrive at a clean baseline before adding new features.
 
 Goal: hero, header, footer, and shared design primitives are at 9/10 quality.
 
-### Header
-- [ ] Real logo PNG, 56px tall
-- [ ] Top utility bar with EN/ES toggle (hides on scroll)
-- [ ] Main nav with 0.22em letter-spacing, gold underline on active
-- [ ] Ghost CTA "Schedule Consultation" on right
-- [ ] Sticky behavior with backdrop-blur
-- [ ] Mobile menu (full-screen, dark, with same hierarchy)
+> **Status (2026-05):** Phase 1 above-the-fold is shipped at v3. Footer remains v1 pending refactor.
+> The original v1/v2 component specs in this section are kept below as historical record only — see `docs/DESIGN.md > Components` for the current v3 specifications.
 
-### Hero
-- [ ] Full viewport editorial dark hero
-- [ ] Playfair italic 76px headline, 2 lines, second in gold
-- [ ] Inter 16px subhead, max-width 520px
-- [ ] Two CTAs (primary gold + ghost arrow)
-- [ ] Eyebrow with heritage divider
-- [ ] No stats grid (removed)
-- [ ] No decorative rotated squares (removed)
-- [ ] Bottom-left scroll cue, bottom-right featured residence pill
-- [ ] Subtle radial gold glow background, no Unsplash placeholder cliché
+### Header — ✅ shipped (v3)
+- [x] Real logo PNG (h-10 / 40px) + Inter wordmark cream lockup
+- [x] Fixed transparent over hero on home, dark glass on scroll
+- [x] Nav links cream/60 → gold underline reveal on hover (500ms)
+- [x] Cream-outline ghost "Contact us" CTA, backdrop-blur, premium tracking
+- [x] Sticky/fixed behavior with backdrop-blur on scroll
+- [x] Mobile menu (full-screen charcoal/95 glass, cream items, gold/20 dividers)
+- [x] Lang toggle EN / ES with gold active state
+- [x] Hairline cream/8 border-bottom even in transparent state
 
-### Floating search
-- [ ] Cream surface bridging dark→light
-- [ ] Gold hairline border
-- [ ] Soft shadow
-- [ ] Playfair italic field labels
-- [ ] Charcoal "Discover" submit button
+### Hero — ✅ shipped (v3 — pivoted from v2 text-only)
+- [x] Full-bleed architectural photo (Unsplash placeholder, TODO commissioned)
+- [x] 4-layer cinematic overlay (top scrim, left gradient, bottom vignette, radial corner)
+- [x] Subtle grain overlay (SVG fractalNoise at opacity 0.07 mix-blend-overlay)
+- [x] Inter 88px weight 300 cream headline, 2 lines forced via max-w-[680px]
+- [x] Cream/75 subhead, max-width 400, leading-[1.55]
+- [x] Two CTAs: oxblood-red "Schedule a tour" (lift + warm shadow) + cream-ghost "Browse Properties →"
+- [x] Eyebrow gold uppercase tracked + 1px x 40px gold rule (the system's first deliberate accent)
+- [x] No stats grid (removed — replaced by Pillars section, verifiable claims only)
+- [x] No decorative rotated squares
+- [x] No scroll cue
+- [x] No "Featured Residence" pill
 
-### Footer
+### Floating search — ✅ shipped (v3 — single-surface luxury console)
+- [x] Cream/80 glass panel over hero (no separate dark button block)
+- [x] Brand-gold/12 hairline outer border
+- [x] Compound shadow: top inset bevel + full inner ring + outer ground shadow
+- [x] Three field slots (Location, Property type, Price) with Inter labels (no Playfair)
+- [x] Action slot integrated on same surface — "Search →" with gold underline reveal hover
+- [x] CTA copy "Search" (not "Discover")
+
+### Three Pillars — ✅ shipped (v3 — replaces fabricated stats grid)
+- [x] Section bg-off-white-soft under hero
+- [x] 3 verifiable claims (off-market access, architectural focus, bilingual fluency)
+- [x] Each opens with 1px x 40px gold/80 rule
+- [x] Bilingual seed in `content/home.ts`
+
+### Footer — ⏳ pending v3 refactor
 - [ ] Reduced to 3 column groups + brand + bottom strip
 - [ ] Newsletter as bottom-border input
-- [ ] Logo prominent in cream
+- [ ] Logo prominent in cream (use `logo-wordmark-cream.png`)
 - [ ] Bottom strip: copyright · privacy · terms · sitemap · language
 
-### Shared primitives
+### Shared primitives — ⏳ deferred (extract on third use, not before)
 - [ ] `<Container>` component (3 widths: max, narrow, text)
-- [ ] `<Eyebrow>` component
-- [ ] `<HeritageDivider>` component (the gold line)
-- [ ] `<Button>` with 4 variants (primary, secondary, ghost, action)
+- [ ] `<Button>` with 4 variants — extract once Properties cards land
 - [ ] `<Input>` with bottom-border style
-- [ ] `<Reveal>` motion wrapper (fade + translateY on scroll)
+- [ ] `<Reveal>` motion wrapper (fade + translateY on scroll) — for sections below the fold
+- ~~`<Eyebrow>` component~~ — used in two distinct registers (hero gold-uppercase vs. section neutral-natural-case); not generic enough to extract
+- ~~`<HeritageDivider>` component~~ — removed in v2, not coming back
 
-**Definition of done:** all v1 heritage patterns are removed and v2 design system is applied consistently. The hero, header, and footer are production-quality.
+**Definition of done (Phase 1):** above-the-fold is shipped at v3 quality. Footer refactor closes Phase 1 fully.
 
 ## Phase 2: Catalog + property detail (Weeks 4–5)
 

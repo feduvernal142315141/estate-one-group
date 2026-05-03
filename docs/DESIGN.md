@@ -4,27 +4,27 @@
 
 ---
 
-## Direction shift (v2)
+## Direction shift (v3)
 
-**This document supersedes the v1 heritage direction.** The previous spec (Sotheby's/Aman Resorts references, dark hero, Playfair italic everywhere, warm cream backgrounds) is archived in `DESIGN.v1.md`.
+**This document is now at v3.** The v1 heritage direction (Sotheby's/Aman warmth, Playfair italic everywhere, dark hero with gold glow, cream-warm backgrounds) is archived in `DESIGN.v1.md`. The v2 minimalism direction (Linear/Aesop tech-product look, text-only off-white hero, gold restricted to logo only) is preserved here as evolutionary record but is no longer the target.
 
-**New direction: tech-luxury minimalism with surgical gold accents.**
+**Current direction: modern luxury with photography presence.**
 
-References that define this direction: **Linear, Aesop, Compass, Vercel, Brunello Cucinelli, Hermès Beauty**.
+References that define v3: **The Agency, Sotheby's International Realty (modern, not the heritage catalog), Aman Resorts, Brunello Cucinelli, Hermès, Bottega Veneta**. Linear and Aesop still inform our typography rhythm and restraint, but no longer the visual composition — v3 is photography-forward, cinematic, brand-anchored.
 
-What this is NOT: Sotheby's heritage vibes, Aman resort warmth, editorial magazine dark heroes. Those are the old references. They now belong to a competitor archetype we are deliberately not.
+What this is NOT: a flat tech-product page (v2 Linear), a warm Sotheby's heritage catalog (v1), a high-volume real-estate portal (Zillow/Realtor). It is a luxury booking-desk for a small founder-led firm.
 
 ---
 
 ## Design philosophy
 
-The site is **precise, not theatrical**. It must feel like a considered product company that happens to sell properties — not a luxury magazine.
+The site is **cinematic, brand-anchored, and quietly confident**. It must feel like a private booking console for a luxury concierge — not a form, not a portal, not a magazine.
 
 Three guiding principles:
 
-1. **Silence over noise.** Empty space is luxury. Never fill a section just because there is room.
-2. **Restraint over showmanship.** Gold appears in 2–3 places per page, maximum. It is a scalpel, not a paintbrush.
-3. **Every detail intentional.** Generic UI patterns (ornate dividers, all-caps tracked nav, dark hero with gold glow) are forbidden. Clean, direct, modern.
+1. **Silence over noise — but never empty.** Whitespace is luxury, but the hero is photography-led; restraint applies to color, typography, and motion, not to visual presence.
+2. **Gold as a system, not a decoration.** Gold appears in 4–5 deliberate places per page (logo, hero eyebrow + rule, search border, pillar rules, lang-toggle active). Every other gold instance must be removed or justified. It whispers a system, not a paint job.
+3. **Every detail intentional and slow.** Hover transitions live at 300–500ms. Generic UI patterns (ornate dividers, all-caps tracked nav, alarm-red CTAs, hard color blocks inside soft panels) are forbidden. Premium pacing on every interaction.
 
 ---
 
@@ -33,25 +33,27 @@ Three guiding principles:
 These are the **only** colors. No additional grays outside the scale below, no other reds, no other golds.
 
 ```css
-/* Primary palette — from the official brand manual */
---brand-black:    #000000;  /* sophistication, base */
---brand-gold:     #C7991C;  /* luxury accent — use sparingly */
---brand-red:      #B00000;  /* energy, action — use very sparingly */
---brand-cream:    #FFF9DC;  /* warmth — text on dark surfaces only */
+/* Primary palette — from the official brand manual, v3 refined */
+--brand-black:     #000000;  /* sophistication, base */
+--brand-gold:      #C7991C;  /* luxury accent — surgical use */
+--brand-red:       #7A0000;  /* v3: oxblood, refined from v1 alarm #B00000 */
+--brand-red-deep:  #5A0000;  /* v3: hover state for primary red CTA */
+--brand-cream:     #FFF9DC;  /* warmth — text on dark surfaces only */
 
 /* Tonal scale (derived) */
---gold-light:     #E8C36A;  /* hover states on gold elements */
---gold-deep:      #8B6914;  /* small gold text on light surfaces */
---off-white:      #FAFAF7;  /* primary light surface — replaces cream-warm */
---off-white-soft: #F4F2EC;  /* secondary light surface, subtle backgrounds */
---charcoal:       #0A0A0A;  /* primary dark surface */
---charcoal-soft:  #141414;  /* secondary dark surface */
+--gold-light:      #E8C36A;  /* hover states on gold elements */
+--gold-deep:       #8B6914;  /* small gold text on light surfaces */
+--off-white:       #FAFAF7;  /* primary light surface */
+--off-white-soft:  #F4F2EC;  /* secondary light surface (Pillars, cards) */
+--charcoal:        #0A0A0A;  /* primary dark surface */
+--charcoal-soft:   #141414;  /* secondary dark surface */
 
 /* Neutral scale */
---neutral-200:    #E8E6E0;  /* subtle borders */
---neutral-400:    #A8A6A0;  /* placeholder text, muted UI */
---neutral-600:    #6B6963;  /* secondary body text */
---neutral-800:    #2A2825;  /* near-black body text on light */
+--neutral-200:     #E8E6E0;  /* subtle borders */
+--neutral-400:     #A8A6A0;  /* very recessive copy (search labels) */
+--neutral-500:     #8A8881;  /* mid-recessive copy (interpolated, v3 add) */
+--neutral-600:     #6B6963;  /* secondary body text */
+--neutral-800:     #2A2825;  /* near-black body text on light */
 ```
 
 ### Semantic tokens (use these, not raw colors)
@@ -79,19 +81,21 @@ These are the **only** colors. No additional grays outside the scale below, no o
 --border-subtle-dark:      1px solid rgba(255, 255, 255, 0.08);
 ```
 
-### Color use rules
+### Color use rules — v3
 
 | Color | Where it lives | Where it does NOT live |
 |---|---|---|
-| **Charcoal** | Hero/footer backgrounds, primary text on light, primary CTAs | Gold fills anywhere |
-| **Gold** | Logo mark, 1–2 accent moments per viewport (max 2–3 per page) | Borders, eyebrows, dividers, buttons, nav underlines |
-| **Red** | "Schedule Tour" CTA, "Just Listed" badge (1 per fold max) | Body text, decorative use, multiple elements per fold |
-| **Cream** | Text on charcoal/dark surfaces only (hero, footer) | Light surface backgrounds — use off-white instead |
-| **Off-white** | Primary page surface, cards, sections | Never pure white — pure white is harsh |
+| **Charcoal** | Footer background, header glass on scroll, primary text on light, charcoal CTAs | Solid color blocks inside cream panels (search bar lesson — read as "form + button") |
+| **Gold** | Logo, hero eyebrow + rule, search bar hairline border, pillar rules, lang-toggle active state. Hover underlines on nav links and on the search "Search" prompt. | Body text, large fills, borders other than hairlines |
+| **Oxblood red** | "Schedule a tour" CTA only (high-intent conversion) and "Just Listed" badge | Anywhere else — red is reserved |
+| **Cream** | Text on dark surfaces (hero overlay, footer, header glass), the floating search panel surface | Light page backgrounds — use off-white |
+| **Off-white** | Primary page surface (sections after the hero, cards) | Never pure white |
 
-**Gold sniper rule:** Gold #C7991C appears in the logo and a maximum of 2 additional instances per full page. If you are placing gold somewhere and it is not the logo — pause and justify it. Can the component work without gold? If yes, remove it.
+**Gold sniper rule (v3):** Gold #C7991C appears in **5 deliberate places per page** maximum: (1) logo, (2) hero eyebrow + rule, (3) search bar hairline border, (4) pillar rules, (5) lang-toggle active. Interactive gold (nav link underline reveal, search "Search" underline) is allowed because it is hover-only and reinforces the system. If you are placing gold somewhere new — pause and justify it against this list.
 
 Pure white is prohibited as a page background. Use `--off-white` (#FAFAF7).
+
+**Red restraint:** Oxblood `#7A0000` is the only red on the site. The hover state goes to `#5A0000` (--brand-red-deep). Never use the v1 alarm-red `#B00000`.
 
 ---
 
@@ -240,36 +244,65 @@ Modern motion is **snappy and confident**, not slow and cinematic.
 
 ## Components
 
-### Buttons
+### Buttons — v3
 
 ```tsx
-// Primary — charcoal fill, off-white text
-<button className="bg-[var(--charcoal)] text-[var(--off-white)] px-8 py-4 text-[14px] font-medium hover:opacity-90 transition-opacity duration-200">
+// Action red — primary conversion CTA (Schedule a tour)
+<Link className="
+  bg-brand-red text-brand-cream px-10 py-3.5
+  text-[13px] font-medium tracking-[0.08em]
+  shadow-[0_2px_4px_rgba(0,0,0,0.1)]
+  transition-all duration-500
+  hover:-translate-y-px hover:bg-brand-red-deep
+  hover:shadow-[0_16px_32px_-12px_rgba(122,0,0,0.55)]
+  motion-reduce:hover:translate-y-0 motion-reduce:transition-none
+">
+  Schedule a tour
+</Link>
+
+// Ghost cream over dark — secondary action on hero (Browse Properties)
+<Link className="
+  group inline-flex items-center gap-3
+  border border-brand-cream/55 px-10 py-3.5
+  text-[13px] font-medium tracking-[0.08em] text-brand-cream
+  transition-all duration-500
+  hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal
+  motion-reduce:transition-none
+">
   Browse Properties
-</button>
+  <span aria-hidden className="text-[12px] transition-transform duration-500 group-hover:translate-x-1 motion-reduce:transition-none">
+    →
+  </span>
+</Link>
 
-// Secondary — charcoal outline
-<button className="border border-[var(--charcoal)] text-[var(--charcoal)] px-8 py-4 text-[14px] font-medium hover:bg-[var(--charcoal)] hover:text-[var(--off-white)] transition-all duration-200">
-  Learn More
-</button>
+// Ghost cream outlined — header CTA (Contact us)
+<Link className="
+  border border-brand-cream/35 px-7 py-2.5
+  text-[13px] font-medium tracking-[0.08em] text-brand-cream
+  backdrop-blur-sm transition-all duration-500
+  hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal
+">
+  Contact us
+</Link>
 
-// Ghost — text only, optional arrow
-<button className="text-[var(--charcoal)] text-[14px] font-medium hover:opacity-70 transition-opacity duration-200">
-  See all properties →
-</button>
-
-// Action red — only "Schedule Tour"
-<button className="bg-[var(--brand-red)] text-[var(--brand-cream)] px-8 py-4 text-[14px] font-medium hover:opacity-90 transition-opacity duration-200">
-  Schedule Tour
+// Charcoal solid — used on light surfaces (cards, secondary pages)
+<button className="
+  bg-charcoal text-off-white px-10 py-3.5
+  text-[13px] font-medium tracking-[0.08em]
+  transition-opacity duration-500 hover:opacity-90
+">
+  Browse Properties
 </button>
 ```
 
-**Button rules:**
-- One primary CTA per viewport. Never two.
-- **No uppercase.** Natural sentence case: "Browse Properties" not "BROWSE PROPERTIES".
-- **No letter-spacing.** Zero tracking on all button text.
-- No underline animation on ghost buttons.
-- Optional arrow (`→`) on right only.
+**Button rules — v3:**
+- **One primary CTA per viewport.** Never two of the same weight.
+- **Pacing:** all transitions live at 300–500ms. No 200ms snap.
+- **Tracking:** all button text uses `tracking-[0.08em]`. The single exception to the "no letter-spacing on UI text" rule, justified by premium typesetting at small sizes.
+- **No uppercase.** Natural case: "Schedule a tour" not "SCHEDULE A TOUR".
+- **Sharp corners:** 0px radius on every button.
+- **Arrow micro-motion:** ghost buttons may carry a `→` glyph that translates `+1px` on group-hover over 500ms.
+- **Lift on primary red only.** Other CTAs change color/background only.
 
 ### Inputs
 
@@ -296,34 +329,83 @@ Labels are Inter, not Playfair italic (v1 pattern is gone).
 - **Hover: no scale transform.** Brightness change only (`brightness(1.03)`).
 - Bottom: 1px neutral-200 border.
 
-### Header
+### Header — v3
 
-- **Background:** off-white (#FAFAF7) with `border-bottom: 1px solid var(--neutral-200)`.
-- No transparent-over-hero. No charcoal on scroll. Always off-white.
-- **Logo:** 32px desktop, 28px mobile. Use `public/brand/logo.png`.
-- **Nav items:** Inter 14px weight 400, natural case, no letter-spacing. "Properties" not "PROPERTIES".
-- **Active nav item:** charcoal weight 500 + `border-bottom: 2px solid var(--charcoal)`.
-- **Language toggle:** plain text "EN / ES" — no box, no border, no separator hairline.
-- **CTA:** ghost outlined charcoal "Schedule Consultation".
+Composes against a dark hero photo on the home route, against off-white surfaces elsewhere. The route check is `pathname === "/"`; on any other route, the dark glass state is applied from first paint so cream typography stays legible.
+
+- **Position:** `fixed inset-x-0 top-0 z-50`.
+- **Initial state (over hero):** `bg-transparent`, `border-bottom: 1px solid rgba(255,249,220,0.08)` (cream/8 hairline horizon), `py-7`.
+- **Scrolled state (>80px) or mobile menu open:** `bg-charcoal/85`, `backdrop-blur-xl`, `border-bottom: 1px solid rgba(199,153,28,0.25)` (gold hairline), `shadow-[0_8px_32px_rgba(0,0,0,0.25)]` (soft depth), `py-4`.
+- **Transition:** `300ms` between states, all properties.
+- **Logo lockup:** `public/brand/logo.png` at h-10 (40px), gap-4, paired with "Estate One Group" wordmark in Inter 15px weight 500 cream, tracking-[0.01em].
+- **Nav items:** Inter 15px weight 500 cream/60, natural case, tracking-[0.02em]. Hover transitions to cream and reveals a 1px gold underline that scales from center over 500ms ease-snappy. Container gap-12.
+- **Active nav item:** (TODO until routing wired) — same gold underline, persistent.
+- **Language toggle:** plain text "EN / ES" with a slash separator at cream/20. **Active locale text-brand-gold** (a deliberate gold accent in the system); inactive cream/30 hover cream.
+- **CTA "Contact us":** cream outlined ghost. `border-brand-cream/35 px-7 py-2.5 text-[13px] tracking-[0.08em] backdrop-blur-sm`, hover swaps to cream fill.
+- **Mobile menu:** full-screen `bg-charcoal/95` backdrop-blur-xl overlay. Items Inter 18px weight 500 cream with gold/20 hairline dividers. Body scroll lock active.
+- **Focus states:** gold/60 outline at 2-3px offset on every interactive element.
 - No top utility bar in MVP.
 
-### Hero
+### Hero — v3
 
-- **Background: off-white (#FAFAF7).** This is the biggest change from v1. The hero is light, not dark.
-- Layout: asymmetric 50/50 optional — copy left, photo right (Compass-style). Or full-width text hero with photo below.
-- **Headline:** Inter 88px weight 300, color charcoal, letter-spacing -0.04em. Two lines max. No gold split, no italic.
-- **Subhead:** Inter 18px, color neutral-600, max-width 480px.
-- 1 primary charcoal CTA + 1 ghost link.
-- No stats grid, no eyebrow with divider, no scroll cue, no "Featured Residence" pill, no gold decorations.
+Full-bleed architectural photography under a composed multi-layer overlay. Editorial typography sits left-aligned over the cinematic ground.
 
-### Floating search
+- **Background:** photo via `next/image fill object-cover priority`. Source is commissioned architectural photography (currently a Unsplash placeholder marked TODO).
+- **Section:** `relative min-h-screen w-full overflow-hidden bg-charcoal` (charcoal fallback before the image loads).
+- **Overlay composition (back to front):**
+  1. **Top scrim** `h-48 bg-gradient-to-b from-charcoal/65 to-transparent` — composes with the transparent navbar.
+  2. **Left-to-right cinematic gradient** `bg-gradient-to-r from-charcoal/75 via-charcoal/40 to-charcoal/20` — anchors the editorial copy block on the left.
+  3. **Bottom vignette** `h-1/2 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-transparent` — prepares the floating search ground.
+  4. **Soft radial corner vignette** `bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(10,10,10,0.4)_100%)]` — frames the composition.
+  5. **Subtle grain** — `.bg-grain` utility (SVG fractalNoise tile) at `opacity-[0.07] mix-blend-overlay`. Should be felt, not seen.
+- **Container:** `mx-auto max-w-[1280px] px-5 lg:px-12`, `min-h-screen flex flex-col justify-center`, `pt-32 pb-56 lg:pt-40 lg:pb-64`. The pb is generous to leave room for the floating search card overlap.
+- **Eyebrow:** Inter 12px weight 500 uppercase tracking-[0.22em] color brand-gold/85, preceded by a 1px x 40px brand-gold/50 rule, gap-4.
+- **Headline:** Inter 48 → 64 → 88px weight 300, leading-[1.08], tracking-[-0.025em], cream, `text-balance`, max-w-[680px] desktop. Forced to two lines for cover-page composition. Two lines max, no italic, no gold split.
+- **Subhead:** Inter 16 → 18px weight 400, leading-[1.55], cream/75, max-w-[400px]. mt-8 md:mt-12 from headline.
+- **CTAs (mt-12 lg:mt-14):** primary oxblood-red "Schedule a tour" + ghost cream "Browse Properties →". See Buttons spec.
+- **Floating search** mounted as the last child of the hero section (see below).
 
-- **Background:** white card (`#ffffff`) sitting on off-white surface.
-- **Border:** 1px neutral-200.
-- **Soft shadow** underneath (`--shadow-card`).
-- No negative margin bridging dark→light (hero is light now).
-- Field labels: Inter, not Playfair italic.
-- Submit button: charcoal solid "Search" (not "Discover").
+### Floating search — v3
+
+Single-surface cream glass panel composed over the hero photo. Reads as a private booking-desk console, not a form.
+
+- **Position:** `absolute inset-x-0 bottom-10 lg:bottom-14 z-20`, centered with `pointer-events-none` outer wrapper so clicks fall through to non-search hero areas.
+- **Panel:** `max-w-[920px] border border-brand-gold/12 bg-brand-cream/80 backdrop-blur-xl`.
+- **Compound shadow (the "object" framing):**
+  ```
+  inset 0 1px 0 rgba(255,249,220,0.45),    /* top bevel highlight */
+  inset 0 0 0 1px rgba(255,249,220,0.12),  /* full inner ring (double border refinement) */
+  0 32px 64px -20px rgba(0,0,0,0.35)       /* outer ground shadow, broad and soft */
+  ```
+- **Layout:** flex row desktop, flex col mobile. Three field slots + one action slot, all on the same surface. No dark color block.
+- **Field slot:**
+  - Padding `px-6 py-4`.
+  - Label: Inter 10px weight 500 uppercase tracking-[0.2em] text-neutral-400.
+  - Value: Inter 15px weight 500 charcoal (full opacity — values lead the hierarchy).
+  - Hover: `bg-brand-cream/95`. Focus-visible: cream/95 + gold/50 inset outline.
+  - Inter-cell divider: `border-brand-gold/10` hairline (vertical desktop, horizontal mobile).
+- **Action slot ("Search"):**
+  - Same cream-glass surface but slightly more present: `bg-brand-cream/85` idle, `bg-brand-cream` hover.
+  - Divider from fields: `border-brand-gold/8` hairline (finer than inter-field dividers — signals "cell-type change").
+  - Padding `px-6 md:pl-8 py-4`, `min-w-[200px]` desktop.
+  - Content: text "Search" Inter 14px weight 500 charcoal tracking-[0.12em] + arrow `→` text-[16px] charcoal/55 → charcoal on group-hover.
+  - Hover micro-interaction: gold underline reveal under "Search" (matching nav link pattern) + arrow translateX-1, both 500ms ease-snappy.
+  - Focus-visible: gold/50 inset outline.
+- Server Component (no submit handler yet — slots are buttons for keyboard affordance only).
+
+### Pillars — v3
+
+Sits directly under the hero. Three verifiable claims (no fabricated metrics).
+
+- **Section:** `bg-off-white-soft` (#F4F2EC) — subtle differentiation from the page primary surface.
+- **Container:** `max-w-[1280px] mx-auto px-5 py-24 lg:px-12 lg:py-32`.
+- **Layout:** 3 columns desktop (`md:grid-cols-3 md:gap-12 lg:gap-16`), 1 column mobile (`gap-16` vertical).
+- **Each pillar:**
+  - Opens with a 1px x 40px `bg-brand-gold/80` rule.
+  - Title: Inter 20–22px weight 500 leading-snug tracking-[-0.005em] charcoal.
+  - Description: Inter 15–16px weight 400 leading-relaxed neutral-600.
+- **Data source:** `content/home.ts` — bilingual seed, EN currently hardcoded; ES swap with next-intl.
+- Server Component.
 
 ### Footer
 
@@ -375,39 +457,45 @@ Forbidden: emoji, colored 3D icons, multi-color icons.
 
 ---
 
-## Reference brands
+## Reference brands — v3
 
 When in doubt, look at how these brands handle the problem:
 
 | Brand | What to study |
 |---|---|
-| Linear | Typography rhythm, snappy micro-interactions, monochromatic restraint |
-| Aesop | Whitespace, copy density, surface color, restraint in decoration |
-| Compass | Real estate layout patterns, search UX, property card structure |
-| Vercel | Component layouts, header simplicity, light surface design |
-| Brunello Cucinelli | Modern luxury e-commerce, product photography, spacing |
-| Hermès Beauty | Sparing accent color use, editorial but not theatrical |
+| **The Agency** | Real estate hero photography composition, dark overlay editorial, ghost CTA over photo |
+| **Sotheby's International Realty (modern)** | Premium real estate restraint with photography, gold accent strategy. NOT the heritage catalog. |
+| **Aman Resorts** | Cinematic photography, hero copy density, "private console" booking interactions |
+| **Brunello Cucinelli** | Modern luxury e-commerce, photography curation, premium pacing |
+| **Hermès** | Surgical accent color use, oxblood register, editorial but never theatrical |
+| **Bottega Veneta** | Architectural moody photography, typography minimalism, sharp corners |
+| Linear *(typography only)* | Inter weight rhythm, micro-interaction pacing — but not visual composition |
+| Aesop *(typography only)* | Copy density, restraint — but our hero is photo-led, not text-only |
 
 ---
 
-## What changed from v1
+## What changed from v1 → v2 → v3
 
-| Area | v1 (heritage) | v2 (tech-luxury) |
-|---|---|---|
-| Hero | Dark charcoal, Playfair italic 76px, gold split line | Light off-white, Inter 88px weight 300, all charcoal |
-| Typography | Playfair italic everywhere | Inter everywhere; Playfair only for property names |
-| Background | Cream warm #FAF7F0 | Off-white #FAFAF7 (cooler, Aesop-adjacent) |
-| Nav | UPPERCASE tracked 0.22em | Natural case, no tracking |
-| Buttons | Gold fill primary | Charcoal fill primary |
-| Gold usage | Borders, eyebrows, dividers, buttons, nav active | Logo + 2 accents per page max. Nowhere else. |
-| Borders | 0.5px gold hairlines | 1px neutral-200 (#E8E6E0) |
-| Heritage Divider | Gold line before headline | Removed entirely |
-| Motion | 400–1200ms cinematic | 200–300ms snappy |
-| Parallax | Yes (30% max) | Removed |
-| Image hover | scale(1.04) | Brightness change only |
-| Card orientation | 4:5 vertical magazine | 5:4 horizontal |
-| Section gap | 160px desktop | 192px desktop |
-| Container max | 1440px | 1280px |
-| Icon stroke | 1.2 | 1.5 |
-| Playfair italic | Headlines, eyebrows, inputs, everywhere | Gone — only property-name in Playfair roman |
-| Reference brands | Sotheby's, Aman, Magnum Photos, The Agency | Linear, Aesop, Compass, Vercel, Brunello Cucinelli, Hermès Beauty |
+| Area | v1 (heritage) | v2 (tech-luxury) | **v3 (modern luxury w/ photography)** |
+|---|---|---|---|
+| Hero | Dark charcoal, Playfair italic 76px, gold split | Light off-white, text-only, Inter 88px charcoal | **Photo full-bleed + 4-layer overlay + grain. Inter 88px cream weight 300.** |
+| Hero CTAs | Gold fill primary + outline secondary | Charcoal fill + ghost | **Oxblood-red primary + cream-ghost secondary, both with 500ms hover** |
+| Header | Charcoal scrolled bar with gold hairlines | Off-white sticky always-light | **Fixed transparent over hero, dark glass on scroll, gold hairline on scroll** |
+| Search bar | Gold-bordered cream card with charcoal "Discover" block | Off-white card with charcoal "Search" block | **Single-surface cream glass console, no dark block, gold underline on action** |
+| Typography | Playfair italic everywhere | Inter everywhere except property names | Same as v2 — Inter universal, Playfair for property names only |
+| Background | Cream warm #FAF7F0 | Off-white #FAFAF7 | Off-white #FAFAF7 + grain texture on hero |
+| Nav | UPPERCASE tracked 0.22em | Natural case, no tracking | **Natural case, font-medium, tracking-[0.02em], gold underline reveal hover** |
+| Lang toggle active | Gold | Cream lleno | **Gold (back to gold — system identity)** |
+| Gold usage | Borders, eyebrows, dividers, buttons, everywhere | Logo only | **Logo + 4 deliberate accents (eyebrow, search border, pillar rules, lang active)** |
+| Brand red | Alarm #B00000 | Same | **Oxblood #7A0000 (Brunello/Hermès register), hover #5A0000** |
+| Borders | 0.5px gold hairlines | 1px neutral-200 only | 1px neutral-200 base + gold hairlines on hero/search panel |
+| Motion | 400–1200ms cinematic | 200–300ms snappy | **300–500ms premium pacing — slower than v2, faster than v1** |
+| Parallax | Yes | Removed | Removed |
+| Image hover | scale(1.04) | Brightness only | Brightness only |
+| Card orientation | 4:5 vertical | 5:4 horizontal | 5:4 horizontal |
+| Section gap | 160px desktop | 192px desktop | 192px desktop |
+| Container max | 1440px | 1280px | 1280px |
+| Icon stroke | 1.2 | 1.5 | 1.25–1.5 (search icons 1.25, nav icons 1.5) |
+| Stats grid | Yes, fabricated | Removed | **Replaced by Three Pillars (verifiable claims)** |
+| Subtle grain | No | No | **Yes — SVG noise on hero at opacity 0.07 mix-blend-overlay** |
+| Reference brands | Sotheby's heritage, Aman, Magnum, The Agency | Linear, Aesop, Compass, Vercel | The Agency, Sotheby's modern, Aman, Brunello, Hermès, Bottega |

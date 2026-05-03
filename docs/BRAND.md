@@ -8,6 +8,8 @@
 
 > Estate One Group is a founder-led, modern real estate firm in South Florida with a direct, considered approach to premium homes.
 
+> **Visual direction (v3):** modern luxury with photography presence. Cinematic hero, brand-anchored composition, gold as a 5-place system (logo + 4 deliberate accents per page). NOT v1 heritage warmth (Sotheby's catalog) and NOT v2 minimalism (text-only Linear). Voice and copy rules in this document remain unchanged from v2.
+
 ---
 
 ## Brand pillars
