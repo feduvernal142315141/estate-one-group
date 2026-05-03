@@ -31,7 +31,7 @@ const fields: readonly Field[] = [
 export function FloatingSearch() {
   return (
     <div className="pointer-events-none absolute inset-x-0 bottom-10 z-20 flex justify-center px-5 lg:bottom-14 lg:px-12">
-      <div className="pointer-events-auto w-full max-w-[920px] border border-brand-gold/12 bg-brand-cream/80 shadow-[inset_0_1px_0_rgba(255,249,220,0.45),0_32px_64px_-20px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+      <div className="pointer-events-auto w-full max-w-[920px] border border-brand-gold/12 bg-brand-cream/80 shadow-[inset_0_1px_0_rgba(255,249,220,0.45),inset_0_0_0_1px_rgba(255,249,220,0.12),0_32px_64px_-20px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         <div className="flex flex-col md:flex-row md:items-stretch">
           <div className="grid flex-1 grid-cols-1 md:grid-cols-3">
             {fields.map((field, index) => (
@@ -48,7 +48,7 @@ export function FloatingSearch() {
                 <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-400">
                   {field.label}
                 </span>
-                <span className="text-[15px] font-normal text-charcoal/90">
+                <span className="text-[15px] font-medium text-charcoal">
                   {field.value}
                 </span>
               </button>
@@ -57,9 +57,9 @@ export function FloatingSearch() {
           <button
             type="button"
             aria-label="Search properties"
-            className="group flex items-center justify-between gap-4 border-t border-brand-gold/12 px-6 py-4 transition-colors duration-500 hover:bg-brand-cream/95 focus-visible:bg-brand-cream/95 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-gold/50 motion-reduce:transition-none md:min-w-[180px] md:border-l md:border-t-0"
+            className="group flex items-center justify-between gap-6 border-t border-brand-gold/8 bg-brand-cream/85 px-6 py-4 transition-colors duration-500 hover:bg-brand-cream focus-visible:bg-brand-cream focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-gold/50 motion-reduce:transition-none md:min-w-[200px] md:border-l md:border-t-0 md:pl-8"
           >
-            <span className="relative inline-block text-[14px] font-medium tracking-[0.08em] text-charcoal">
+            <span className="relative inline-block text-[14px] font-medium tracking-[0.12em] text-charcoal">
               Search
               <span
                 aria-hidden
@@ -68,7 +68,7 @@ export function FloatingSearch() {
             </span>
             <span
               aria-hidden
-              className="text-[14px] text-charcoal/60 transition-all duration-500 group-hover:translate-x-1 group-hover:text-charcoal motion-reduce:transition-none"
+              className="text-[16px] text-charcoal/55 transition-all duration-500 group-hover:translate-x-1 group-hover:text-charcoal motion-reduce:transition-none"
             >
               →
             </span>
