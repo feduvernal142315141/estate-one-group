@@ -49,16 +49,21 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
           <Link
             href="/contact"
-            className="inline-block bg-brand-red px-8 py-4 text-[14px] font-medium text-brand-cream transition-opacity duration-200 hover:opacity-90 motion-reduce:transition-none"
+            className="inline-block bg-brand-red px-10 py-3.5 text-[14px] font-medium tracking-[0.05em] text-brand-cream shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-px hover:bg-brand-red-deep hover:shadow-[0_12px_24px_-8px_rgba(122,0,0,0.45)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
           >
             Schedule a tour
           </Link>
           <Link
             href="/properties"
-            className="inline-flex items-center gap-2 border border-brand-cream/40 px-8 py-4 text-[14px] font-medium text-brand-cream transition-all duration-200 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
+            className="group inline-flex items-center gap-2.5 border border-brand-cream/40 px-10 py-3.5 text-[14px] font-medium tracking-[0.05em] text-brand-cream transition-all duration-300 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
           >
             Browse Properties
-            <span aria-hidden>→</span>
+            <span
+              aria-hidden
+              className="inline-block transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none"
+            >
+              →
+            </span>
           </Link>
         </div>
       </div>
