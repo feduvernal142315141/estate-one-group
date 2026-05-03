@@ -70,18 +70,18 @@ export function Hero() {
         <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4 lg:mt-14">
           <Link
             href="/contact"
-            className="inline-block bg-brand-red px-10 py-3.5 text-[14px] font-medium tracking-[0.05em] text-brand-cream shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-px hover:bg-brand-red-deep hover:shadow-[0_12px_24px_-8px_rgba(122,0,0,0.45)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
+            className="inline-block bg-brand-red px-10 py-3.5 text-[13px] font-medium tracking-[0.08em] text-brand-cream shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-px hover:bg-brand-red-deep hover:shadow-[0_16px_32px_-12px_rgba(122,0,0,0.55)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand-gold/60 motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
           >
             Schedule a tour
           </Link>
           <Link
             href="/properties"
-            className="group inline-flex items-center gap-2.5 border border-brand-cream/40 px-10 py-3.5 text-[14px] font-medium tracking-[0.05em] text-brand-cream transition-all duration-300 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
+            className="group inline-flex items-center gap-3 border border-brand-cream/55 px-10 py-3.5 text-[13px] font-medium tracking-[0.08em] text-brand-cream transition-all duration-500 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand-gold/60 motion-reduce:transition-none"
           >
             Browse Properties
             <span
               aria-hidden
-              className="inline-block transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none"
+              className="inline-block text-[12px] transition-transform duration-500 group-hover:translate-x-1 motion-reduce:transition-none"
             >
               →
             </span>
