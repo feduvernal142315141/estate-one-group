@@ -53,16 +53,16 @@ export function Hero() {
       />
 
       <div className="relative mx-auto flex min-h-screen max-w-[1280px] flex-col justify-center px-5 pt-32 pb-56 lg:px-12 lg:pt-40 lg:pb-64">
-        <p className="inline-flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.18em] text-brand-gold">
-          <span aria-hidden className="h-px w-8 bg-brand-gold/60" />
+        <p className="inline-flex items-center gap-4 text-[12px] font-medium uppercase tracking-[0.22em] text-brand-gold/85">
+          <span aria-hidden className="h-px w-10 bg-brand-gold/50" />
           Miami · South Florida
         </p>
 
-        <h1 className="mt-8 max-w-[720px] text-[48px] font-light leading-[1.08] tracking-[-0.025em] text-brand-cream text-balance md:text-[64px] lg:text-[88px]">
+        <h1 className="mt-10 max-w-[680px] text-[48px] font-light leading-[1.08] tracking-[-0.025em] text-brand-cream text-balance md:text-[64px] lg:text-[88px]">
           Miami real estate, considered.
         </h1>
 
-        <p className="mt-8 max-w-[420px] text-[16px] font-normal leading-relaxed text-brand-cream/60 md:mt-10 md:text-[18px]">
+        <p className="mt-8 max-w-[400px] text-[16px] font-normal leading-[1.55] text-brand-cream/75 md:mt-12 md:text-[18px]">
           Premium homes in Miami and South Florida. We work with a small
           number of clients each year, by referral.
         </p>
