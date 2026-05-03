@@ -1,6 +1,7 @@
-// TODO: components below (Properties, Services, About, Testimonials, Contact, Footer) still pending v2 refactor
+// TODO: components below (Properties, Services, About, Testimonials, Contact, Footer) still pending v3 refactor
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { Pillars } from "@/components/pillars";
 import { Properties } from "@/components/properties";
 import { Services } from "@/components/services";
 import { About } from "@/components/about";
@@ -14,6 +15,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Pillars />
         <Properties />
         <Services />
         <About />
