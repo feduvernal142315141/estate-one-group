@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 type Locale = "en" | "es";
@@ -18,19 +19,36 @@ const navItems: readonly NavItem[] = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
+const SCROLL_THRESHOLD = 80;
+
 /**
- * Site header — v2 tech-luxury direction.
+ * Site header — v3 modern luxury direction.
  *
- * Sticky off-white bar with a 1px neutral-200 border-bottom. No scroll
- * listener, no transformation, no shadow, no backdrop-blur. Logo + Inter
- * wordmark on the left; primary nav, EN/ES toggle, and a charcoal-outline
- * "Contact us" CTA on the right. Below `lg`, the right side collapses
- * to a hamburger that opens a full-screen off-white overlay.
+ * Fixed, transparent over the homepage hero photo on initial load;
+ * collapses to a charcoal glass bar (85% opacity + backdrop-blur)
+ * once the user scrolls past 80px. On routes without a dark hero
+ * (anything other than `/`), the dark glass state is applied from
+ * first paint so the cream wordmark stays legible.
  */
 export function Header() {
+  const pathname = usePathname();
+  const isHeroPage = pathname === "/";
+
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // TODO: swap for next-intl `useLocale()` once i18n routing is wired.
   const [locale, setLocale] = useState<Locale>("en");
+
+  useEffect(() => {
+    if (!isHeroPage) {
+      setIsScrolled(true);
+      return;
+    }
+    const onScroll = () => setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHeroPage]);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
@@ -42,10 +60,17 @@ export function Header() {
   }, [isMobileMenuOpen]);
 
   const closeMobile = () => setIsMobileMenuOpen(false);
+  const isCondensed = isScrolled || isMobileMenuOpen;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-off-white">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-8 px-5 py-4 lg:px-12 lg:py-5">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 motion-reduce:transition-none ${
+        isCondensed
+          ? "border-b border-white/10 bg-charcoal/85 py-4 backdrop-blur-xl"
+          : "border-b border-transparent bg-transparent py-6"
+      }`}
+    >
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-8 px-5 lg:px-12">
         <BrandLockup />
 
         <nav
@@ -56,7 +81,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[14px] font-normal text-neutral-600 transition-colors duration-200 hover:text-charcoal motion-reduce:transition-none"
+              className="text-[14px] font-normal text-brand-cream/70 transition-colors duration-200 hover:text-brand-cream motion-reduce:transition-none"
             >
               {item.label}
             </Link>
@@ -67,7 +92,7 @@ export function Header() {
           <LangToggle locale={locale} onChange={setLocale} />
           <Link
             href="/contact"
-            className="inline-block border border-charcoal px-6 py-3 text-[14px] font-medium text-charcoal transition-all duration-200 hover:bg-charcoal hover:text-off-white motion-reduce:transition-none"
+            className="inline-block border border-brand-cream/40 px-6 py-3 text-[14px] font-medium text-brand-cream transition-all duration-200 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
           >
             Contact us
           </Link>
@@ -79,7 +104,7 @@ export function Header() {
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
-          className="p-1 text-charcoal transition-opacity duration-200 hover:opacity-70 motion-reduce:transition-none lg:hidden"
+          className="p-1 text-brand-cream transition-opacity duration-200 hover:opacity-70 motion-reduce:transition-none lg:hidden"
         >
           {isMobileMenuOpen ? (
             <X className="h-6 w-6" strokeWidth={1.5} />
@@ -114,7 +139,7 @@ function BrandLockup() {
         priority
         className="h-8 w-auto"
       />
-      <span className="text-[14px] font-medium leading-none text-charcoal">
+      <span className="text-[14px] font-medium leading-none text-brand-cream">
         Estate One Group
       </span>
     </Link>
@@ -130,8 +155,8 @@ function LangToggle({
 }) {
   const base =
     "text-[14px] transition-colors duration-200 motion-reduce:transition-none";
-  const active = "font-medium text-charcoal";
-  const inactive = "font-normal text-neutral-400 hover:text-charcoal";
+  const active = "font-medium text-brand-cream";
+  const inactive = "font-normal text-brand-cream/40 hover:text-brand-cream";
 
   return (
     <div role="group" aria-label="Language" className="flex items-center">
@@ -143,7 +168,7 @@ function LangToggle({
       >
         EN
       </button>
-      <span aria-hidden className="px-2 text-[14px] text-neutral-400">
+      <span aria-hidden className="px-2 text-[14px] text-brand-cream/40">
         /
       </span>
       <button
@@ -173,20 +198,20 @@ function MobileMenu({
     <div
       id="mobile-menu"
       aria-hidden={!open}
-      className={`fixed inset-0 z-40 flex flex-col bg-off-white transition-opacity duration-200 motion-reduce:transition-none lg:hidden ${
+      className={`fixed inset-0 z-40 flex flex-col bg-charcoal/95 backdrop-blur-xl transition-opacity duration-200 motion-reduce:transition-none lg:hidden ${
         open
           ? "pointer-events-auto opacity-100"
           : "pointer-events-none opacity-0"
       }`}
     >
       <div className="flex flex-1 flex-col justify-between px-5 pb-12 pt-24">
-        <ul className="flex flex-col border-t border-neutral-200">
+        <ul className="flex flex-col border-t border-white/10">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="block border-b border-neutral-200 py-5 text-[18px] font-normal text-charcoal transition-colors duration-200 hover:text-neutral-600 motion-reduce:transition-none"
+                className="block border-b border-white/10 py-5 text-[18px] font-normal text-brand-cream transition-colors duration-200 hover:text-brand-cream/70 motion-reduce:transition-none"
               >
                 {item.label}
               </Link>
@@ -199,7 +224,7 @@ function MobileMenu({
           <Link
             href="/contact"
             onClick={onClose}
-            className="block w-full border border-charcoal py-4 text-center text-[14px] font-medium text-charcoal transition-all duration-200 hover:bg-charcoal hover:text-off-white motion-reduce:transition-none"
+            className="block w-full border border-brand-cream/40 py-4 text-center text-[14px] font-medium text-brand-cream transition-all duration-200 hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
           >
             Contact us
           </Link>
