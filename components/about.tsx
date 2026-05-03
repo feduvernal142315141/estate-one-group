@@ -1,116 +1,78 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Award, Target, Heart, Sparkles } from "lucide-react";
-
-const values = [
-  {
-    icon: Award,
-    title: "Excelencia",
-    description: "Nos esforzamos por superar las expectativas en cada interacción.",
-  },
-  {
-    icon: Target,
-    title: "Integridad",
-    description: "Actuamos con honestidad y transparencia en todas nuestras operaciones.",
-  },
-  {
-    icon: Heart,
-    title: "Compromiso",
-    description: "Su satisfacción es nuestra prioridad absoluta.",
-  },
-  {
-    icon: Sparkles,
-    title: "Innovación",
-    description: "Adoptamos las mejores prácticas y tecnologías del mercado.",
-  },
-];
-
+/**
+ * Founders preview — v3 modern luxury.
+ *
+ * Quiet 60/40 editorial block introducing the founder-led nature
+ * of the firm. Real portrait of Adiel Figueroa from
+ * `public/brand/founders.jpg` (no gold frame, no "15+ años" badge,
+ * no decorative bordered squares from v1). Two short, direct
+ * paragraphs replace the v1 marketing prose, anchored by a
+ * "Meet the firm" link to the dedicated /about page (Phase 3).
+ *
+ * Surface is `off-white-soft` — alternates rhythmically with the
+ * `off-white` of the Properties strip above. Server Component.
+ */
 export function About() {
   return (
-    <section id="about" className="py-24 bg-cream relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Column */}
-          <div className="relative">
-            {/* Main Image */}
-            <div className="relative z-10">
-              <img
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
-                alt="Luxury Real Estate Office"
-                className="w-full h-[500px] object-cover"
+    <section className="bg-off-white-soft">
+      <div className="mx-auto max-w-[1280px] px-5 py-24 lg:px-12 lg:py-32">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-200">
+              <Image
+                src="/brand/founders.jpg"
+                alt="Adiel Figueroa, founder of Estate One Group"
+                fill
+                sizes="(min-width: 1024px) 500px, 100vw"
+                className="object-cover"
               />
-              {/* Gold Frame */}
-              <div className="absolute -top-4 -left-4 w-full h-full border-2 border-gold -z-10" />
             </div>
-
-            {/* Experience Badge */}
-            <div className="absolute -bottom-8 -right-8 bg-charcoal p-8 z-20 shadow-2xl">
-              <span className="block text-5xl font-serif text-gold mb-2">
-                15+
-              </span>
-              <span className="text-cream/80 text-sm uppercase tracking-wider">
-                Años de<br />Experiencia
-              </span>
-            </div>
-
-            {/* Decorative Element */}
-            <div className="absolute top-1/2 -left-16 w-32 h-32 border border-gold/30 hidden lg:block" />
           </div>
 
-          {/* Content Column */}
-          <div>
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-12 h-px bg-gold" />
-              <span className="text-gold text-sm tracking-[0.3em] uppercase">
-                Sobre Nosotros
-              </span>
-            </div>
-
-            <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-8 text-balance">
-              Una Tradición de
-              <span className="text-crimson"> Excelencia</span> Inmobiliaria
+          <div className="lg:col-span-6 lg:col-start-7">
+            <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-neutral-600">
+              The firm
+            </p>
+            <h2 className="mt-6 max-w-[520px] text-[36px] font-light leading-[1.05] tracking-[-0.025em] text-charcoal md:text-[44px] lg:text-[48px]">
+              Founder-led. By referral.
             </h2>
 
-            <p className="text-charcoal/70 leading-relaxed mb-6">
-              En Estate One Group, hemos dedicado más de una década a redefinir
-              el estándar de servicio en el mercado inmobiliario de lujo.
-              Nuestra pasión por la excelencia y nuestro compromiso con cada
-              cliente nos han convertido en el socio de confianza para las
-              transacciones más prestigiosas.
-            </p>
-
-            <p className="text-charcoal/70 leading-relaxed mb-10">
-              Nuestro equipo de expertos combina un profundo conocimiento del
-              mercado con un enfoque personalizado, asegurando que cada cliente
-              reciba la atención y el cuidado que merece en una de las
-              decisiones más importantes de su vida.
-            </p>
-
-            {/* Values */}
-            <div className="grid sm:grid-cols-2 gap-6 mb-10">
-              {values.map((value) => (
-                <div key={value.title} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <value.icon className="w-5 h-5 text-gold" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-charcoal text-lg mb-1">
-                      {value.title}
-                    </h4>
-                    <p className="text-charcoal/60 text-sm">
-                      {value.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="mt-8 max-w-[480px] space-y-5 text-[16px] leading-[1.65] text-neutral-800 md:text-[17px]">
+              <p>
+                Estate One Group is led by Adiel Figueroa from Miami. He works
+                directly with a small number of clients each year — most
+                introductions come by referral.
+              </p>
+              <p>
+                The focus is architectural literacy and off-market access: who
+                built the home, how it was built, and what hasn&rsquo;t yet
+                reached public listings. The conversation happens in English
+                or Spanish, with equal precision.
+              </p>
             </div>
 
-            <a
-              href="#contact"
-              className="inline-flex px-8 py-4 bg-charcoal text-cream font-medium tracking-wide uppercase hover:bg-crimson transition-all duration-300"
-            >
-              Conocer al Equipo
-            </a>
+            <div className="mt-10">
+              <Link
+                href="/about"
+                className="group inline-flex items-center gap-3 text-[14px] font-medium text-charcoal transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-gold/60 motion-reduce:transition-none"
+              >
+                <span className="relative inline-block">
+                  Meet the firm
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-center scale-x-0 bg-brand-gold transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
+                  />
+                </span>
+                <span
+                  aria-hidden
+                  className="text-[13px] transition-transform duration-500 group-hover:translate-x-1 motion-reduce:transition-none"
+                >
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
