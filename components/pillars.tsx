@@ -23,7 +23,7 @@ export function Pillars() {
             <article key={pillar.id} className="flex flex-col">
               <span
                 aria-hidden
-                className="mb-6 inline-block h-px w-10 bg-brand-gold"
+                className="mb-6 inline-block h-px w-10 bg-brand-gold/80"
               />
               <h3 className="text-[20px] font-medium leading-snug tracking-[-0.005em] text-charcoal lg:text-[22px]">
                 {pillar.title.en}
