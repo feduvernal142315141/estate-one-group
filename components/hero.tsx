@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FloatingSearch } from "@/components/search";
 
 // TODO: replace with commissioned architectural photography
 const HERO_IMAGE_URL =
@@ -51,7 +52,7 @@ export function Hero() {
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(10,10,10,0.4)_100%)]"
       />
 
-      <div className="relative mx-auto flex min-h-screen max-w-[1280px] flex-col justify-center px-5 pt-32 pb-40 lg:px-12 lg:pt-40 lg:pb-48">
+      <div className="relative mx-auto flex min-h-screen max-w-[1280px] flex-col justify-center px-5 pt-32 pb-56 lg:px-12 lg:pt-40 lg:pb-64">
         <p className="inline-flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.18em] text-brand-gold">
           <span aria-hidden className="h-px w-8 bg-brand-gold/60" />
           Miami · South Florida
@@ -87,6 +88,8 @@ export function Hero() {
           </Link>
         </div>
       </div>
+
+      <FloatingSearch />
     </section>
   );
 }
