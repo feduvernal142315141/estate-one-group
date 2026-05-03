@@ -10,38 +10,27 @@ type Locale = "en" | "es";
 type NavItem = { label: string; href: string };
 
 const navItems: readonly NavItem[] = [
-  { label: "Home", href: "#hero" },
-  { label: "Properties", href: "#properties" },
-  { label: "Services", href: "#services" },
-  { label: "The Firm", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Properties", href: "/properties" },
+  { label: "Neighborhoods", href: "/neighborhoods" },
+  { label: "The Firm", href: "/about" },
+  { label: "Journal", href: "/journal" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
-const SCROLL_THRESHOLD = 80;
-
-const EASE_OUT_SOFT = "ease-[var(--ease-out-soft)]";
-
 /**
- * Estate One Group site header.
+ * Site header — v2 tech-luxury direction.
  *
- * Editorial luxury navbar: real PNG isotype + wordmark, hairline gold
- * accents, ghost-outlined gold CTA, and a visual-only EN | ES toggle.
- * Past 80px of scroll, padding collapses, the bar gains a charcoal
- * backdrop-blur, and a hairline gold border appears. Below the `lg`
- * breakpoint the right side becomes a hamburger that opens a full-screen
- * overlay menu.
+ * Sticky off-white bar with a 1px neutral-200 border-bottom. No scroll
+ * listener, no transformation, no shadow, no backdrop-blur. Logo + Inter
+ * wordmark on the left; primary nav, EN/ES toggle, and a charcoal-outline
+ * "Contact us" CTA on the right. Below `lg`, the right side collapses
+ * to a hamburger that opens a full-screen off-white overlay.
  */
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // TODO: swap for next-intl `useLocale()` once i18n routing is wired.
   const [locale, setLocale] = useState<Locale>("en");
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
@@ -55,49 +44,33 @@ export function Header() {
   const closeMobile = () => setIsMobileMenuOpen(false);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-[400ms] ${EASE_OUT_SOFT} ${
-        isScrolled
-          ? "border-b-[0.5px] border-brand-gold/15 bg-charcoal/95 py-3 backdrop-blur-md"
-          : "border-b-[0.5px] border-transparent bg-transparent py-6"
-      }`}
-    >
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-8 px-5 lg:px-14">
-        <Link
-          href="/"
-          aria-label="Estate One Group"
-          className="inline-flex items-center gap-3"
-        >
-          <BrandLogo isScrolled={isScrolled} />
-        </Link>
+    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-off-white">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-8 px-5 py-4 lg:px-12 lg:py-5">
+        <BrandLockup />
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-10 lg:flex"
+          className="hidden items-center gap-8 lg:flex"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
-              className={`group relative text-[11px] font-medium uppercase tracking-[0.22em] text-brand-cream/80 transition-colors duration-[200ms] hover:text-brand-gold`}
+              className="text-[14px] font-normal text-neutral-600 transition-colors duration-200 hover:text-charcoal motion-reduce:transition-none"
             >
               {item.label}
-              <span
-                aria-hidden
-                className={`pointer-events-none absolute -bottom-1.5 left-0 h-px w-0 bg-brand-gold transition-all duration-[400ms] ${EASE_OUT_SOFT} group-hover:w-full`}
-              />
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           <LangToggle locale={locale} onChange={setLocale} />
-          <a
-            href="#contact"
-            className={`inline-block border border-brand-gold/40 px-7 py-3 text-[10px] font-medium uppercase tracking-[0.25em] text-brand-gold transition-all duration-[400ms] ${EASE_OUT_SOFT} hover:border-brand-gold hover:bg-brand-gold hover:text-charcoal`}
+          <Link
+            href="/contact"
+            className="inline-block border border-charcoal px-6 py-3 text-[14px] font-medium text-charcoal transition-all duration-200 hover:bg-charcoal hover:text-off-white motion-reduce:transition-none"
           >
-            Schedule Consultation
-          </a>
+            Contact us
+          </Link>
         </div>
 
         <button
@@ -105,12 +78,13 @@ export function Header() {
           onClick={() => setIsMobileMenuOpen((open) => !open)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
-          className="p-2 text-brand-cream transition-colors duration-[200ms] hover:text-brand-gold lg:hidden"
+          aria-controls="mobile-menu"
+          className="p-1 text-charcoal transition-opacity duration-200 hover:opacity-70 motion-reduce:transition-none lg:hidden"
         >
           {isMobileMenuOpen ? (
-            <X className="h-6 w-6" strokeWidth={1.2} />
+            <X className="h-6 w-6" strokeWidth={1.5} />
           ) : (
-            <Menu className="h-6 w-6" strokeWidth={1.2} />
+            <Menu className="h-6 w-6" strokeWidth={1.5} />
           )}
         </button>
       </div>
@@ -125,36 +99,25 @@ export function Header() {
   );
 }
 
-function BrandLogo({ isScrolled }: { isScrolled: boolean }) {
+function BrandLockup() {
   return (
-    <>
+    <Link
+      href="/"
+      aria-label="Estate One Group"
+      className="inline-flex items-center gap-2.5"
+    >
       <Image
         src="/brand/logo.png"
         alt=""
         width={582}
         height={720}
         priority
-        className={`w-auto transition-all duration-[400ms] ${EASE_OUT_SOFT} ${
-          isScrolled ? "h-9" : "h-10 lg:h-12"
-        }`}
+        className="h-8 w-auto"
       />
-      <div className="flex flex-col justify-center">
-        <span
-          className={`font-serif font-normal leading-none tracking-normal text-brand-cream/90 transition-all duration-[400ms] ${EASE_OUT_SOFT} ${
-            isScrolled ? "text-[14px]" : "text-[16px]"
-          }`}
-        >
-          Estate One
-        </span>
-        <div
-          aria-hidden
-          className="my-1.5 h-px w-7 bg-brand-gold/60"
-        />
-        <span className="font-sans text-[8px] font-normal uppercase leading-none tracking-[0.4em] text-brand-gold">
-          GROUP
-        </span>
-      </div>
-    </>
+      <span className="text-[14px] font-medium leading-none text-charcoal">
+        Estate One Group
+      </span>
+    </Link>
   );
 }
 
@@ -166,16 +129,12 @@ function LangToggle({
   onChange: (next: Locale) => void;
 }) {
   const base =
-    "text-[11px] font-medium uppercase tracking-[0.22em] transition-colors duration-[200ms]";
-  const active = "text-brand-gold";
-  const inactive = "text-brand-cream/50 hover:text-brand-cream";
+    "text-[14px] transition-colors duration-200 motion-reduce:transition-none";
+  const active = "font-medium text-charcoal";
+  const inactive = "font-normal text-neutral-400 hover:text-charcoal";
 
   return (
-    <div
-      role="group"
-      aria-label="Language"
-      className="flex items-center gap-3"
-    >
+    <div role="group" aria-label="Language" className="flex items-center">
       <button
         type="button"
         onClick={() => onChange("en")}
@@ -184,7 +143,9 @@ function LangToggle({
       >
         EN
       </button>
-      <span aria-hidden className="h-3 w-px bg-brand-gold/30" />
+      <span aria-hidden className="px-2 text-[14px] text-neutral-400">
+        /
+      </span>
       <button
         type="button"
         onClick={() => onChange("es")}
@@ -210,37 +171,38 @@ function MobileMenu({
 }) {
   return (
     <div
+      id="mobile-menu"
       aria-hidden={!open}
-      className={`fixed inset-0 top-0 z-40 flex flex-col bg-charcoal/98 backdrop-blur-lg transition-opacity duration-[700ms] ${EASE_OUT_SOFT} lg:hidden ${
+      className={`fixed inset-0 z-40 flex flex-col bg-off-white transition-opacity duration-200 motion-reduce:transition-none lg:hidden ${
         open
           ? "pointer-events-auto opacity-100"
           : "pointer-events-none opacity-0"
       }`}
     >
-      <div className="flex flex-1 flex-col justify-between px-5 pb-12 pt-28">
-        <ul className="flex flex-col border-t-[0.5px] border-brand-gold/15">
+      <div className="flex flex-1 flex-col justify-between px-5 pb-12 pt-24">
+        <ul className="flex flex-col border-t border-neutral-200">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a
+              <Link
                 href={item.href}
                 onClick={onClose}
-                className="block border-b-[0.5px] border-brand-gold/15 py-6 font-serif text-[28px] italic text-brand-cream transition-colors duration-[200ms] hover:text-brand-gold"
+                className="block border-b border-neutral-200 py-5 text-[18px] font-normal text-charcoal transition-colors duration-200 hover:text-neutral-600 motion-reduce:transition-none"
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-stretch gap-8">
           <LangToggle locale={locale} onChange={onLocaleChange} />
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             onClick={onClose}
-            className={`block w-full border border-brand-gold/40 py-4 text-center text-[10px] font-medium uppercase tracking-[0.25em] text-brand-gold transition-all duration-[400ms] ${EASE_OUT_SOFT} hover:bg-brand-gold hover:text-charcoal`}
+            className="block w-full border border-charcoal py-4 text-center text-[14px] font-medium text-charcoal transition-all duration-200 hover:bg-charcoal hover:text-off-white motion-reduce:transition-none"
           >
-            Schedule Consultation
-          </a>
+            Contact us
+          </Link>
         </div>
       </div>
     </div>
