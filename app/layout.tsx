@@ -3,20 +3,21 @@ import { playfair, inter } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ESTATE ONE GROUP | Luxury Real Estate Excellence",
+  title: "Estate One Group — Miami real estate, considered.",
   description:
-    "Experience unparalleled luxury real estate services. Premium properties, exceptional service, and timeless elegance in every transaction.",
+    "Modern real estate in South Florida. Premium homes, off-market access.",
   keywords: [
-    "luxury real estate",
-    "premium properties",
-    "estate one group",
-    "high-end homes",
-    "exclusive listings",
+    "Miami real estate",
+    "South Florida real estate",
+    "Estate One Group",
+    "off-market homes",
+    "Coral Gables",
+    "Sunny Isles Beach",
   ],
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0A",
+  themeColor: "#FAFAF7",
   width: "device-width",
   initialScale: 1,
 };

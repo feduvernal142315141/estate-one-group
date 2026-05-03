@@ -1,4 +1,4 @@
-// TODO Sprint 1: all components below need refactor with new design tokens (Opus)
+// TODO: components below (Properties, Services, About, Testimonials, Contact, Footer) still pending v2 refactor
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Properties } from "@/components/properties";
