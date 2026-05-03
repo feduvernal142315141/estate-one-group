@@ -22,13 +22,15 @@ const navItems: readonly NavItem[] = [
 const SCROLL_THRESHOLD = 80;
 
 /**
- * Site header — v3 modern luxury direction.
+ * Site header — v3 modern luxury, polished.
  *
  * Fixed, transparent over the homepage hero photo on initial load;
- * collapses to a charcoal glass bar (85% opacity + backdrop-blur)
- * once the user scrolls past 80px. On routes without a dark hero
- * (anything other than `/`), the dark glass state is applied from
- * first paint so the cream wordmark stays legible.
+ * collapses to a charcoal glass bar (85% opacity + backdrop-blur +
+ * soft shadow + hairline gold border) once the user scrolls past 80px.
+ * On routes without a dark hero (anything other than `/`), the dark
+ * glass state is applied from first paint so the cream typography
+ * stays legible. Nav links carry a centered scaleX gold underline on
+ * hover for a quiet luxury micro-interaction.
  */
 export function Header() {
   const pathname = usePathname();
@@ -66,8 +68,8 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 motion-reduce:transition-none ${
         isCondensed
-          ? "border-b border-white/10 bg-charcoal/85 py-4 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent py-6"
+          ? "border-b border-brand-gold/25 bg-charcoal/85 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl"
+          : "border-b border-transparent bg-transparent py-7"
       }`}
     >
       <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-8 px-5 lg:px-12">
@@ -75,15 +77,19 @@ export function Header() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-8 lg:flex"
+          className="hidden items-center gap-10 lg:flex"
         >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-[14px] font-normal text-brand-cream/70 transition-colors duration-200 hover:text-brand-cream motion-reduce:transition-none"
+              className="group relative text-[14px] font-medium tracking-[0.02em] text-brand-cream/60 transition-colors duration-300 hover:text-brand-cream motion-reduce:transition-none"
             >
               {item.label}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -bottom-1.5 left-0 h-px w-full origin-center scale-x-0 bg-brand-gold transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 motion-reduce:transition-none"
+              />
             </Link>
           ))}
         </nav>
@@ -92,7 +98,7 @@ export function Header() {
           <LangToggle locale={locale} onChange={setLocale} />
           <Link
             href="/contact"
-            className="inline-block border border-brand-cream/40 px-6 py-3 text-[14px] font-medium text-brand-cream transition-all duration-200 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
+            className="inline-block border border-brand-cream/40 px-6 py-3 text-[14px] font-medium tracking-[0.05em] text-brand-cream transition-all duration-300 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
           >
             Contact us
           </Link>
@@ -129,7 +135,7 @@ function BrandLockup() {
     <Link
       href="/"
       aria-label="Estate One Group"
-      className="inline-flex items-center gap-2.5"
+      className="inline-flex items-center gap-3"
     >
       <Image
         src="/brand/logo.png"
@@ -137,9 +143,9 @@ function BrandLockup() {
         width={582}
         height={720}
         priority
-        className="h-8 w-auto"
+        className="h-9 w-auto"
       />
-      <span className="text-[14px] font-medium leading-none text-brand-cream">
+      <span className="text-[14px] font-medium leading-none tracking-[0.01em] text-brand-cream">
         Estate One Group
       </span>
     </Link>
@@ -154,9 +160,9 @@ function LangToggle({
   onChange: (next: Locale) => void;
 }) {
   const base =
-    "text-[14px] transition-colors duration-200 motion-reduce:transition-none";
+    "text-[14px] transition-colors duration-300 motion-reduce:transition-none";
   const active = "font-medium text-brand-cream";
-  const inactive = "font-normal text-brand-cream/40 hover:text-brand-cream";
+  const inactive = "font-normal text-brand-cream/35 hover:text-brand-cream";
 
   return (
     <div role="group" aria-label="Language" className="flex items-center">
@@ -168,7 +174,7 @@ function LangToggle({
       >
         EN
       </button>
-      <span aria-hidden className="px-2 text-[14px] text-brand-cream/40">
+      <span aria-hidden className="px-2 text-[14px] text-brand-cream/35">
         /
       </span>
       <button
@@ -205,13 +211,13 @@ function MobileMenu({
       }`}
     >
       <div className="flex flex-1 flex-col justify-between px-5 pb-12 pt-24">
-        <ul className="flex flex-col border-t border-white/10">
+        <ul className="flex flex-col border-t border-brand-gold/20">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="block border-b border-white/10 py-5 text-[18px] font-normal text-brand-cream transition-colors duration-200 hover:text-brand-cream/70 motion-reduce:transition-none"
+                className="block border-b border-brand-gold/20 py-5 text-[18px] font-medium tracking-[0.02em] text-brand-cream transition-colors duration-300 hover:text-brand-cream/70 motion-reduce:transition-none"
               >
                 {item.label}
               </Link>
@@ -224,7 +230,7 @@ function MobileMenu({
           <Link
             href="/contact"
             onClick={onClose}
-            className="block w-full border border-brand-cream/40 py-4 text-center text-[14px] font-medium text-brand-cream transition-all duration-200 hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
+            className="block w-full border border-brand-cream/40 py-4 text-center text-[14px] font-medium tracking-[0.05em] text-brand-cream transition-all duration-300 hover:bg-brand-cream hover:text-charcoal motion-reduce:transition-none"
           >
             Contact us
           </Link>
