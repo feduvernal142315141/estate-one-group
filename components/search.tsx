@@ -1,14 +1,4 @@
-type Field = {
-  id: string;
-  label: string;
-  value: string;
-};
-
-const fields: readonly Field[] = [
-  { id: "location", label: "Location", value: "Miami Beach, FL" },
-  { id: "type", label: "Property type", value: "Condo · House · Penthouse" },
-  { id: "price", label: "Price", value: "$1M — Unlimited" },
-] as const;
+import { getTranslations } from "next-intl/server";
 
 /**
  * Floating search console — v3 polished as a luxury object.
@@ -28,7 +18,15 @@ const fields: readonly Field[] = [
  * are buttons for keyboard affordance only). The catalog routing
  * lands in a later sprint.
  */
-export function FloatingSearch() {
+export async function FloatingSearch() {
+  const t = await getTranslations("search");
+
+  const fields = [
+    { id: "location", label: t("locationLabel"), value: t("locationValue") },
+    { id: "type", label: t("typeLabel"), value: t("typeValue") },
+    { id: "price", label: t("priceLabel"), value: t("priceValue") },
+  ] as const;
+
   return (
     <div className="pointer-events-none absolute inset-x-0 bottom-10 z-20 flex justify-center px-5 lg:bottom-14 lg:px-12">
       <div className="pointer-events-auto w-full max-w-[920px] border border-brand-gold/12 bg-brand-cream/80 shadow-[inset_0_1px_0_rgba(255,249,220,0.45),inset_0_0_0_1px_rgba(255,249,220,0.12),0_32px_64px_-20px_rgba(0,0,0,0.35)] backdrop-blur-xl">
@@ -56,11 +54,11 @@ export function FloatingSearch() {
           </div>
           <button
             type="button"
-            aria-label="Search properties"
+            aria-label={t("searchAriaLabel")}
             className="group flex items-center justify-between gap-6 border-t border-brand-gold/8 bg-brand-cream/85 px-6 py-4 transition-colors duration-500 hover:bg-brand-cream focus-visible:bg-brand-cream focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-gold/50 motion-reduce:transition-none md:min-w-[200px] md:border-l md:border-t-0 md:pl-8"
           >
             <span className="relative inline-block text-[14px] font-medium tracking-[0.12em] text-charcoal">
-              Search
+              {t("searchLabel")}
               <span
                 aria-hidden
                 className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-center scale-x-0 bg-brand-gold transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"

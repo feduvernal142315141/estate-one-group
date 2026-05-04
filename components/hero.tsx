@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/lib/navigation";
 import { FloatingSearch } from "@/components/search";
 
 // TODO: replace with commissioned architectural photography
@@ -19,7 +20,9 @@ const HERO_IMAGE_URL =
  * uppercase eyebrow with a 1px gold rule — the first deliberate
  * gold accent of the page after the logo.
  */
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("hero");
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-charcoal">
       <Image
@@ -60,16 +63,15 @@ export function Hero() {
       <div className="relative mx-auto flex min-h-screen max-w-[1280px] flex-col justify-center px-5 pt-32 pb-56 lg:px-12 lg:pt-40 lg:pb-64">
         <p className="inline-flex items-center gap-4 text-[12px] font-medium uppercase tracking-[0.22em] text-brand-gold/85">
           <span aria-hidden className="h-px w-10 bg-brand-gold/50" />
-          Miami · South Florida
+          {t("eyebrow")}
         </p>
 
         <h1 className="mt-10 max-w-[680px] text-[48px] font-light leading-[1.08] tracking-[-0.025em] text-brand-cream text-balance md:text-[64px] lg:text-[88px]">
-          Miami real estate, considered.
+          {t("title")}
         </h1>
 
         <p className="mt-8 max-w-[400px] text-[16px] font-normal leading-[1.55] text-brand-cream/75 md:mt-12 md:text-[18px]">
-          Premium homes in Miami and South Florida. We work with a small
-          number of clients each year, by referral.
+          {t("intro")}
         </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4 lg:mt-14">
@@ -77,13 +79,13 @@ export function Hero() {
             href="/contact"
             className="inline-block bg-brand-red px-10 py-3.5 text-[13px] font-medium tracking-[0.08em] text-brand-cream shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-px hover:bg-brand-red-deep hover:shadow-[0_16px_32px_-12px_rgba(122,0,0,0.55)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand-gold/60 motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
           >
-            Schedule a tour
+            {t("scheduleTour")}
           </Link>
           <Link
             href="/properties"
             className="group inline-flex items-center gap-3 border border-brand-cream/55 px-10 py-3.5 text-[13px] font-medium tracking-[0.08em] text-brand-cream transition-all duration-500 hover:border-brand-cream hover:bg-brand-cream hover:text-charcoal focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand-gold/60 motion-reduce:transition-none"
           >
-            Browse Properties
+            {t("browseProperties")}
             <span
               aria-hidden
               className="inline-block text-[12px] transition-transform duration-500 group-hover:translate-x-1 motion-reduce:transition-none"

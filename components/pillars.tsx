@@ -1,3 +1,4 @@
+import { getLocale } from "next-intl/server";
 import { homePillars } from "@/content/home";
 
 /**
@@ -10,11 +11,11 @@ import { homePillars } from "@/content/home";
  *
  * Each pillar carries a thin 1px gold rule above its title — the
  * fourth deliberate gold accent on the homepage (after the logo,
- * hero eyebrow, and search bar border). Renders as a Server Component
- * — bilingual data is currently presented in EN; the copy swap will
- * be wired with next-intl.
+ * hero eyebrow, and search bar border). Renders as a Server Component.
  */
-export function Pillars() {
+export async function Pillars() {
+  const locale = (await getLocale()) as "en" | "es";
+
   return (
     <section className="bg-off-white-soft">
       <div className="mx-auto max-w-[1280px] px-5 py-24 lg:px-12 lg:py-32">
@@ -26,10 +27,10 @@ export function Pillars() {
                 className="mb-6 inline-block h-px w-10 bg-brand-gold/80"
               />
               <h3 className="text-[20px] font-medium leading-snug tracking-[-0.005em] text-charcoal lg:text-[22px]">
-                {pillar.title.en}
+                {pillar.title[locale]}
               </h3>
               <p className="mt-4 text-[15px] font-normal leading-relaxed text-neutral-600 lg:text-[16px]">
-                {pillar.description.en}
+                {pillar.description[locale]}
               </p>
             </article>
           ))}
