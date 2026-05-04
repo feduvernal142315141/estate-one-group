@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Home",
+    "properties": "Properties",
+    "neighborhoods": "Neighborhoods",
+    "about": "The Firm",
+    "journal": "Journal",
+    "contact": "Contact",
+    "contactUs": "Contact us",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Miami · South Florida",
+    "title": "Miami real estate, considered.",
+    "intro": "Premium homes in Miami and South Florida. We work with a small number of clients each year, by referral.",
+    "scheduleTour": "Schedule a tour",
+    "browseProperties": "Browse Properties"
+  },
+  "search": {
+    "locationLabel": "Location",
+    "locationValue": "Miami Beach, FL",
+    "typeLabel": "Property type",
+    "typeValue": "Condo · House · Penthouse",
+    "priceLabel": "Price",
+    "priceValue": "$1M — Unlimited",
+    "searchAriaLabel": "Search properties",
+    "searchLabel": "Search"
+  },
+  "propertiesSection": {
+    "eyebrow": "Currently offered",
+    "title": "Selected listings.",
+    "seeAll": "See all listings"
+  },
+  "aboutSection": {
+    "eyebrow": "The firm",
+    "title": "Founder-led. By referral.",
+    "founderAlt": "Adiel Figueroa, founder of Estate One Group",
+    "body1": "Estate One Group is led by Adiel Figueroa from Miami. He works directly with a small number of clients each year — most introductions come by referral.",
+    "body2": "The focus is architectural literacy and off-market access: who built the home, how it was built, and what hasn't yet reached public listings. The conversation happens in English or Spanish, with equal precision.",
+    "meetTheFirm": "Meet the firm"
+  },
+  "footer": {
+    "eyebrow": "South Florida",
+    "title": "Find a home worth keeping.",
+    "intro": "Off-market access and architectural focus, by referral. We work with a small number of clients each year.",
+    "scheduleTour": "Schedule a tour",
+    "brandDescription": "A modern, founder-led real estate advisory in South Florida. Adiel Figueroa leads every transaction.",
+    "location": "Miami · South Florida",
+    "copyright": "Florida licensed real estate broker.",
+    "columns": {
+      "properties": "Properties",
+      "firm": "The Firm",
+      "reach": "Reach us"
+    },
+    "links": {
+      "sales": "Sales",
+      "offMarket": "Off-market",
+      "neighborhoods": "Neighborhoods",
+      "theFirm": "The Firm",
+      "journal": "Journal",
+      "press": "Press",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "accessibility": "Accessibility"
+    }
+  },
+  "propertyCard": {
+    "bedrooms": "{count} bedrooms",
+    "baths": "{count} baths",
+    "sqft": "{count} sq ft",
+    "justListed": "Just Listed",
+    "sold": "Sold"
+  },
+  "catalog": {
+    "eyebrow": "Currently offered",
+    "title": "The collection.",
+    "intro": "Estate One Group represents a small number of residences at a time, selected for their provenance, architecture, and the discretion of their setting. The homes currently available are listed below.",
+    "noMatches": {
+      "eyebrow": "No matches",
+      "title": "No residences match these criteria.",
+      "body": "Adjust your filters, or return to the full collection — quietly curated, a small list by design.",
+      "reset": "Reset filters"
+    },
+    "filterBar": {
+      "all": "All",
+      "bedsAndBaths": "Beds & Baths",
+      "parking": "Parking",
+      "sort": "Sort",
+      "bedroomsLabel": "Bedrooms",
+      "bathroomsLabel": "Bathrooms",
+      "types": {
+        "house": "Houses",
+        "condo": "Condominiums",
+        "penthouse": "Penthouses",
+        "estate": "Estates",
+        "townhouse": "Townhouses",
+        "land": "Land"
+      },
+      "sorts": {
+        "newest": "Most recent",
+        "price-asc": "Price (low to high)",
+        "price-desc": "Price (high to low)",
+        "sqft-desc": "Largest"
+      }
+    }
+  },
+  "propertyDetail": {
+    "aboutResidence": "About the residence",
+    "virtualTour": {
+      "label": "Virtual tour",
+      "heading": "Step inside, on your terms.",
+      "enter": "Enter the tour",
+      "loading": "Loading tour…",
+      "fullscreen": "Enter fullscreen",
+      "exitFullscreen": "Exit fullscreen",
+      "iframeTitle": "{title} — virtual tour"
+    },
+    "notableFeatures": "Notable features",
+    "location": "Location",
+    "locationNote": "The exact address is shared with qualified buyers on request.",
+    "mapPreview": "Map preview",
+    "requestLocation": "Request exact location",
+    "scheduleViewing": "Schedule a viewing",
+    "viewingAvailable": "{title} is available to view by appointment.",
+    "arrangeViewing": "Arrange a private viewing",
+    "spec": {
+      "bedrooms": "Bedrooms",
+      "baths": "Baths",
+      "sqftInterior": "Sq ft interior",
+      "sqftLot": "Sq ft lot",
+      "yearBuilt": "Year built",
+      "type": "Type"
+    },
+    "types": {
+      "house": "House",
+      "condo": "Condominium",
+      "townhouse": "Townhouse",
+      "penthouse": "Penthouse",
+      "estate": "Estate",
+      "land": "Land"
+    }
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "A direct line to the firm.",
+    "intro": "Adiel Figueroa replies to every inquiry personally, within one business day. Whether you have a residence in mind or are still defining the brief — write us in English or Spanish, with equal precision.",
+    "direct": "Direct",
+    "byAppointment": "By appointment",
+    "appointmentLocation": "Miami · South Florida",
+    "appointmentNote": "Private viewings arranged for qualified buyers.",
+    "hours": "Hours",
+    "hoursValue": "Monday — Friday · 9:00 to 19:00 ET",
+    "hoursSaturday": "Saturday by request",
+    "form": {
+      "aboutResidence": "About this residence",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone (optional)",
+      "messageLabel": "What you're looking for",
+      "sending": "Sending…",
+      "send": "Send message",
+      "successEyebrow": "Message received",
+      "successTitleWithRef": "Thank you for your interest in {title}.",
+      "successTitle": "Thank you.",
+      "successBody": "Adiel will reply personally within one business day."
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "The firm",
+    "title": "Founder-led. By referral.",
+    "intro": "Estate One Group is a modern real estate firm in South Florida. We work with a small number of clients each year, with a direct, considered approach to premium homes.",
+    "founderCaption": "Adiel Figueroa · Founder",
+    "founderAlt": "Adiel Figueroa, founder of Estate One Group",
+    "body1": "Adiel Figueroa founded Estate One Group in Miami. The firm works with a small number of clients each year — most introductions come by referral, and most representations begin with a single conversation about what kind of home is being looked for, and why.",
+    "body2": "The orientation is architectural before it is transactional. Knowing who built a residence, in what year, with what materials, and how it has been kept matters. So does knowing what hasn't yet reached public listings — South Florida's strongest properties trade quietly, and sourcing them is its own discipline.",
+    "body3": "Estate One Group is licensed in Florida and represents both buyers and sellers. Conversations happen in English or Spanish, with equal precision.",
+    "postureEyebrow": "The posture",
+    "postureQuote": "Modern, founder-led, by referral.",
+    "postureQuoteSub": "A small list, by design.",
+    "approachLabel": "The approach",
+    "approachHeading": "How we work.",
+    "ctaEyebrow": "Begin a conversation",
+    "ctaTitle": "Most representations begin with a single call.",
+    "ctaButton": "Get in touch",
+    "principles": [
+      {
+        "label": "01",
+        "title": "First-call brief",
+        "body": "A 30-minute conversation that defines what kind of residence is being sought, in what timeframe, and on what terms. No commitment, no follow-up unless requested."
+      },
+      {
+        "label": "02",
+        "title": "Architectural research",
+        "body": "For every property recommended, we provide year built, original architect when known, construction materials, structural state, and renovation history."
+      },
+      {
+        "label": "03",
+        "title": "Off-market sourcing",
+        "body": "A meaningful share of South Florida's strongest residences trade without ever appearing on a public listing platform. We make those introductions when the timing aligns."
+      }
+    ]
+  },
+  "neighborhoods": {
+    "eyebrow": "South Florida",
+    "title": "By neighborhood.",
+    "intro": "Estate One Group represents five neighborhoods deliberately — each with its own architecture, posture, and reason for being where it is. The collection follows the residences we represent, not the other way around.",
+    "neighborhoodEyebrow": "Neighborhood",
+    "aboutLabel": "About the neighborhood",
+    "anchorsLabel": "What anchors it",
+    "currentlyOffered": "Currently offered",
+    "seeAllInCatalog": "See all in catalog",
+    "noListingsText": "No active listings in {name} at the moment. Most homes here trade off-market — write to us if this is the area you have in mind.",
+    "beginConversation": "Begin a conversation",
+    "consideringEyebrow": "Considering {name}",
+    "ctaTitle": "A meaningful share of homes here trade quietly. We make those introductions.",
+    "ctaButton": "Begin a conversation",
+    "inTitle": "In {name}."
+  },
+  "journal": {
+    "eyebrow": "Journal",
+    "title": "Notes on architecture, neighborhoods, and the market.",
+    "intro": "The Journal is in preparation. The first pieces will cover specific architects working in South Florida, neighborhood-level market shifts, and how to read a residence beyond its listing copy.",
+    "inTheMeantime": "In the meantime",
+    "body": "Until the first piece is published, the firm shares its thinking directly — by appointment, in English or Spanish.",
+    "beginConversation": "Begin a conversation"
+  },
+  "press": {
+    "eyebrow": "Press",
+    "title": "Press inquiries.",
+    "intro": "Estate One Group is a founder-led modern real estate firm in South Florida, led by Adiel Figueroa. We respond to interview requests, comment requests, and editorial features within one business day.",
+    "contactLabel": "Contact",
+    "brandAssets": "Brand assets — logo files, founder portrait, factual boilerplate — available on request."
+  },
+  "legal": {
+    "privacyEyebrow": "Privacy",
+    "privacyTitle": "Privacy policy.",
+    "privacyIntro": "This privacy policy will be updated shortly. We collect information provided through the contact form and use it solely to respond to your inquiry.",
+    "termsEyebrow": "Terms",
+    "termsTitle": "Terms of use.",
+    "termsIntro": "This terms of use document will be updated shortly. By using this website you agree to conduct yourself in accordance with applicable laws.",
+    "accessibilityEyebrow": "Accessibility",
+    "accessibilityTitle": "Accessibility statement.",
+    "accessibilityIntro": "Estate One Group is committed to ensuring this website is accessible to everyone. If you encounter any accessibility barriers, please contact us directly."
+  }
+}

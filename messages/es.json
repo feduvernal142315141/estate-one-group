@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "properties": "Propiedades",
+    "neighborhoods": "Vecindarios",
+    "about": "La Firma",
+    "journal": "Diario",
+    "contact": "Contacto",
+    "contactUs": "Contáctenos",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "Miami · Sur de Florida",
+    "title": "Bienes raíces en Miami, con criterio.",
+    "intro": "Residencias premium en Miami y el sur de Florida. Trabajamos con un número reducido de clientes cada año, por referido.",
+    "scheduleTour": "Agendar una visita",
+    "browseProperties": "Ver propiedades"
+  },
+  "search": {
+    "locationLabel": "Ubicación",
+    "locationValue": "Miami Beach, FL",
+    "typeLabel": "Tipo de propiedad",
+    "typeValue": "Condo · Casa · Penthouse",
+    "priceLabel": "Precio",
+    "priceValue": "$1M — Sin límite",
+    "searchAriaLabel": "Buscar propiedades",
+    "searchLabel": "Buscar"
+  },
+  "propertiesSection": {
+    "eyebrow": "Actualmente disponibles",
+    "title": "Listados seleccionados.",
+    "seeAll": "Ver todos los listados"
+  },
+  "aboutSection": {
+    "eyebrow": "La firma",
+    "title": "Fundada por su dueño. Por referido.",
+    "founderAlt": "Adiel Figueroa, fundador de Estate One Group",
+    "body1": "Estate One Group es liderada por Adiel Figueroa desde Miami. Trabaja directamente con un número reducido de clientes cada año — la mayoría de las presentaciones son por referido.",
+    "body2": "El enfoque es la formación arquitectónica y el acceso fuera de mercado: quién construyó la propiedad, cómo fue construida y lo que aún no ha llegado a los listados públicos. La conversación ocurre en inglés o español, con igual precisión.",
+    "meetTheFirm": "Conoce la firma"
+  },
+  "footer": {
+    "eyebrow": "Sur de Florida",
+    "title": "Encuentra un hogar que valga la pena.",
+    "intro": "Acceso fuera de mercado y enfoque arquitectónico, por referido. Trabajamos con un número reducido de clientes cada año.",
+    "scheduleTour": "Agendar una visita",
+    "brandDescription": "Una firma asesora de bienes raíces moderna y liderada por su fundador en el sur de Florida. Adiel Figueroa dirige cada transacción.",
+    "location": "Miami · Sur de Florida",
+    "copyright": "Corredor de bienes raíces con licencia en Florida.",
+    "columns": {
+      "properties": "Propiedades",
+      "firm": "La Firma",
+      "reach": "Contáctenos"
+    },
+    "links": {
+      "sales": "Ventas",
+      "offMarket": "Fuera de mercado",
+      "neighborhoods": "Vecindarios",
+      "theFirm": "La Firma",
+      "journal": "Diario",
+      "press": "Prensa",
+      "contact": "Contacto",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "accessibility": "Accesibilidad"
+    }
+  },
+  "propertyCard": {
+    "bedrooms": "{count} habitaciones",
+    "baths": "{count} baños",
+    "sqft": "{count} pies²",
+    "justListed": "Recién listado",
+    "sold": "Vendido"
+  },
+  "catalog": {
+    "eyebrow": "Actualmente disponibles",
+    "title": "La colección.",
+    "intro": "Estate One Group representa un número reducido de residencias a la vez, seleccionadas por su procedencia, arquitectura y la discreción de su entorno. Las propiedades actualmente disponibles se listan a continuación.",
+    "noMatches": {
+      "eyebrow": "Sin resultados",
+      "title": "Ninguna residencia coincide con estos criterios.",
+      "body": "Ajusta los filtros o regresa a la colección completa — cuidadosamente curada, una lista pequeña por diseño.",
+      "reset": "Restablecer filtros"
+    },
+    "filterBar": {
+      "all": "Todos",
+      "bedsAndBaths": "Hab. y Baños",
+      "parking": "Estacionamiento",
+      "sort": "Ordenar",
+      "bedroomsLabel": "Habitaciones",
+      "bathroomsLabel": "Baños",
+      "types": {
+        "house": "Casas",
+        "condo": "Condominios",
+        "penthouse": "Penthouses",
+        "estate": "Residencias",
+        "townhouse": "Townhouses",
+        "land": "Terrenos"
+      },
+      "sorts": {
+        "newest": "Más recientes",
+        "price-asc": "Precio (menor a mayor)",
+        "price-desc": "Precio (mayor a menor)",
+        "sqft-desc": "Más grande"
+      }
+    }
+  },
+  "propertyDetail": {
+    "aboutResidence": "Sobre la residencia",
+    "virtualTour": {
+      "label": "Recorrido virtual",
+      "heading": "Recorrer la residencia, a tu ritmo.",
+      "enter": "Iniciar recorrido",
+      "loading": "Cargando recorrido…",
+      "fullscreen": "Pantalla completa",
+      "exitFullscreen": "Salir de pantalla completa",
+      "iframeTitle": "{title} — recorrido virtual"
+    },
+    "notableFeatures": "Características destacadas",
+    "location": "Ubicación",
+    "locationNote": "La dirección exacta se comparte con compradores calificados bajo solicitud.",
+    "mapPreview": "Vista previa del mapa",
+    "requestLocation": "Solicitar ubicación exacta",
+    "scheduleViewing": "Agendar una visita",
+    "viewingAvailable": "{title} está disponible para visitar con cita previa.",
+    "arrangeViewing": "Programar una visita privada",
+    "spec": {
+      "bedrooms": "Habitaciones",
+      "baths": "Baños",
+      "sqftInterior": "Pies² interior",
+      "sqftLot": "Pies² del lote",
+      "yearBuilt": "Año de construcción",
+      "type": "Tipo"
+    },
+    "types": {
+      "house": "Casa",
+      "condo": "Condominio",
+      "townhouse": "Townhouse",
+      "penthouse": "Penthouse",
+      "estate": "Residencia",
+      "land": "Terreno"
+    }
+  },
+  "contact": {
+    "eyebrow": "Ponerse en contacto",
+    "title": "Línea directa con la firma.",
+    "intro": "Adiel Figueroa responde a cada consulta personalmente, dentro de un día hábil. Si tienes una residencia en mente o aún estás definiendo el encargo — escríbenos en inglés o español, con igual precisión.",
+    "direct": "Directo",
+    "byAppointment": "Con cita previa",
+    "appointmentLocation": "Miami · Sur de Florida",
+    "appointmentNote": "Visitas privadas coordinadas para compradores calificados.",
+    "hours": "Horario",
+    "hoursValue": "Lunes — Viernes · 9:00 a 19:00 ET",
+    "hoursSaturday": "Sábados bajo solicitud",
+    "form": {
+      "aboutResidence": "Sobre esta residencia",
+      "nameLabel": "Nombre",
+      "emailLabel": "Correo electrónico",
+      "phoneLabel": "Teléfono (opcional)",
+      "messageLabel": "Lo que estás buscando",
+      "sending": "Enviando…",
+      "send": "Enviar mensaje",
+      "successEyebrow": "Mensaje recibido",
+      "successTitleWithRef": "Gracias por tu interés en {title}.",
+      "successTitle": "Gracias.",
+      "successBody": "Adiel responderá personalmente dentro de un día hábil."
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "La firma",
+    "title": "Fundada por su dueño. Por referido.",
+    "intro": "Estate One Group es una firma de bienes raíces moderna en el sur de Florida. Trabajamos con un número reducido de clientes cada año, con un enfoque directo y considerado hacia las residencias premium.",
+    "founderCaption": "Adiel Figueroa · Fundador",
+    "founderAlt": "Adiel Figueroa, fundador de Estate One Group",
+    "body1": "Adiel Figueroa fundó Estate One Group en Miami. La firma trabaja con un número reducido de clientes cada año — la mayoría de las presentaciones son por referido, y la mayoría de las representaciones comienzan con una sola conversación sobre qué tipo de hogar se busca, y por qué.",
+    "body2": "La orientación es arquitectónica antes que transaccional. Conocer quién construyó una residencia, en qué año, con qué materiales y cómo ha sido mantenida importa. También importa saber lo que aún no ha llegado a los listados públicos — las mejores propiedades del sur de Florida se negocian en silencio, y encontrarlas es su propia disciplina.",
+    "body3": "Estate One Group tiene licencia en Florida y representa tanto a compradores como a vendedores. Las conversaciones ocurren en inglés o español, con igual precisión.",
+    "postureEyebrow": "La postura",
+    "postureQuote": "Moderno, fundado por su dueño, por referido.",
+    "postureQuoteSub": "Una lista pequeña, por diseño.",
+    "approachLabel": "El enfoque",
+    "approachHeading": "Cómo trabajamos.",
+    "ctaEyebrow": "Inicia una conversación",
+    "ctaTitle": "La mayoría de las representaciones comienzan con una sola llamada.",
+    "ctaButton": "Ponerse en contacto",
+    "principles": [
+      {
+        "label": "01",
+        "title": "Primera llamada",
+        "body": "Una conversación de 30 minutos que define qué tipo de residencia se busca, en qué plazo y bajo qué condiciones. Sin compromiso, sin seguimiento a menos que se solicite."
+      },
+      {
+        "label": "02",
+        "title": "Investigación arquitectónica",
+        "body": "Para cada propiedad recomendada, proporcionamos el año de construcción, el arquitecto original cuando se conoce, los materiales de construcción, el estado estructural y el historial de renovaciones."
+      },
+      {
+        "label": "03",
+        "title": "Búsqueda fuera de mercado",
+        "body": "Una parte significativa de las mejores residencias del sur de Florida se negocia sin aparecer nunca en una plataforma de listados pública. Hacemos esas presentaciones cuando el momento es el adecuado."
+      }
+    ]
+  },
+  "neighborhoods": {
+    "eyebrow": "Sur de Florida",
+    "title": "Por vecindario.",
+    "intro": "Estate One Group representa cinco vecindarios de forma deliberada — cada uno con su propia arquitectura, carácter y razón de ser donde está. La colección sigue a las residencias que representamos, no al revés.",
+    "neighborhoodEyebrow": "Vecindario",
+    "aboutLabel": "Sobre el vecindario",
+    "anchorsLabel": "Lo que lo define",
+    "currentlyOffered": "Actualmente disponibles",
+    "seeAllInCatalog": "Ver todo en catálogo",
+    "noListingsText": "No hay listados activos en {name} en este momento. La mayoría de las propiedades aquí se negocian fuera de mercado — escríbenos si esta es el área que tienes en mente.",
+    "beginConversation": "Iniciar una conversación",
+    "consideringEyebrow": "¿Interesado en {name}?",
+    "ctaTitle": "Una parte significativa de las propiedades aquí se negocia en silencio. Nosotros hacemos esas presentaciones.",
+    "ctaButton": "Iniciar una conversación",
+    "inTitle": "En {name}."
+  },
+  "journal": {
+    "eyebrow": "Diario",
+    "title": "Notas sobre arquitectura, vecindarios y el mercado.",
+    "intro": "El Diario está en preparación. Las primeras publicaciones cubrirán arquitectos específicos que trabajan en el sur de Florida, cambios en el mercado a nivel de vecindario y cómo leer una residencia más allá de su texto de listado.",
+    "inTheMeantime": "Mientras tanto",
+    "body": "Hasta que se publique la primera publicación, la firma comparte su perspectiva directamente — con cita, en inglés o español.",
+    "beginConversation": "Iniciar una conversación"
+  },
+  "press": {
+    "eyebrow": "Prensa",
+    "title": "Consultas de prensa.",
+    "intro": "Estate One Group es una firma de bienes raíces moderna y liderada por su fundador en el sur de Florida, dirigida por Adiel Figueroa. Respondemos a solicitudes de entrevistas, comentarios y reportajes editoriales dentro de un día hábil.",
+    "contactLabel": "Contacto",
+    "brandAssets": "Activos de marca — archivos de logotipo, retrato del fundador, texto informativo verificado — disponibles bajo solicitud."
+  },
+  "legal": {
+    "privacyEyebrow": "Privacidad",
+    "privacyTitle": "Política de privacidad.",
+    "privacyIntro": "Esta política de privacidad será actualizada próximamente. Recopilamos la información proporcionada a través del formulario de contacto y la usamos únicamente para responder a tu consulta.",
+    "termsEyebrow": "Términos",
+    "termsTitle": "Términos de uso.",
+    "termsIntro": "Este documento de términos de uso será actualizado próximamente. Al usar este sitio web, aceptas conducirte de acuerdo con las leyes aplicables.",
+    "accessibilityEyebrow": "Accesibilidad",
+    "accessibilityTitle": "Declaración de accesibilidad.",
+    "accessibilityIntro": "Estate One Group está comprometido a garantizar que este sitio web sea accesible para todos. Si encuentras barreras de accesibilidad, contáctanos directamente."
+  }
+}
